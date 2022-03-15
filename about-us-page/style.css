@@ -9,6 +9,8 @@ html {
 
 body {
     color: white;
+    background-color: rgb(59, 59, 59);
+
     margin: 0;
     padding: 0;
     perspective: 1px;
@@ -73,6 +75,11 @@ header::before {
     transition: all 0.3s ease;
 }
 
+.container:hover {
+    background-color: rgb(59, 59, 59);
+    color: #fff;
+}
+
 .container >div {
     position: absolute;
     top: 10%;
@@ -102,9 +109,9 @@ header::before {
     padding-top: 2%;
 }
 
-@Media (max-height: 400px) {
+@Media (max-height: 430px) {
     .title {
-        font-size: small;
+        font-size: 20px;
     }
 }
 
@@ -119,22 +126,30 @@ header::before {
     font-weight: lighter;
     text-align: center;
     color: grey;
+    padding: 1rem;
     transition: all 0.2s ease-in-out;
 }
 
-.container2 > div {
-    margin-top: 10%;
-    float: left;
-    width: 400px;
-    height: 40vh;
-    margin-right: 2.5vw;
-    margin-left: 2.5vw;
-    background-color: aqua;
+.card {
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    height: 12rem;
     border-radius: 15px;
-}
+  }
+  .cards {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    margin-top: 10%;
+    
+  }
+  @media (min-width: 600px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+  }
 
-@Media (max-height: 1000px) {
-    .container2 >div {
-        font-size: 20px;
-    }
-}
+  .container2:hover {
+      background-color: rgb(59, 59, 59);
+      color: #fff;
+  }
