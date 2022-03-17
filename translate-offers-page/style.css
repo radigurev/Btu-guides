@@ -15,7 +15,8 @@ body {
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-}
+    background-color: rgb(59, 59, 59);
+  }
 
 header {
     box-sizing: border-box;
@@ -68,9 +69,13 @@ header::before {
     font-weight: lighter;
     padding: 40px;
     color: grey;
+    transition: all 0.3s ease;
 }
 
 
+.container:hover {
+  background-color: rgb(59, 59, 59);
+ }
 
 .card{
     width: 18rem;
@@ -80,33 +85,54 @@ header::before {
    background-color: white;
    text-align: center;
    position: relative;
+   height: 0;
+   transition: all 0.5s ease-in-out;
+ }
+
+ .height-hundred {
+   height: 100%;
+   margin-right: 200px;
+ }
+
+ .scale-one {
+   transform: scale(1);
  }
 
 img{
- width: 138%;
- margin-left: -19%;
+ width: 139%;
+ margin-left: -19.5%;
  margin-top: -16px;
  border-radius:10px 10px 0 0;
  position: inherit;
+ transform: scale(0);
+ transition: all 1s ease;
 }
 
+.hidden {
+  display: none;
+}
 
-#container {
+.animatedImg {
+  transform-origin: center;
+  transition: all 0.5s ease;
+  transform: scale(0);
+}
+
+#container  {
   position: absolute;
   top: 40%;
-  left: 47%;
-  transform: translate(-50%,-50%);
+  left: 51%;
+  transform: translate(-52.5%,-50%);
 }
 @Media (max-width: 600px) {
-    #container {
+    #container  {
         left: 44%;
     }
 }
 #slider-container {
  height: 400px;
  width: 85vw;
- max-width: 1500px;
- /* background-color: red; */
+ max-width: 1600px;
  position: relative;
  overflow: hidden;
  padding: 20px;
@@ -142,7 +168,7 @@ img{
 
 #slider-container #slider {
  display: flex;
- width: 1000%;
+ width: 1030%;
  height: 100%; 
  transition: all .5s;
 }
@@ -201,15 +227,17 @@ img{
 }
 
 .cards {
+  margin: auto;
   width:800px;
   margin: 0 auto;
   display: grid;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   position: absolute;
   top: 80%;
-  left: 49vw;
+  left: 50%;
   transform: translate(-50%,-50%);
   transition: all 0.5s ease;
+  text-align: justify; 
 }
 
 
@@ -218,26 +246,41 @@ img{
 }
 }
 
-@media (max-width:800px) {
+ @media (max-width:800px) {
   .cards {
     width: 80vw;
     top: 110%;
   }
 }
 
-@media (max-height: 650px){
+@media (max-height: 700px){
   .cards {
-    top: 150%;
+    top: 130%;
+  }
+  .container {
+    background-color: rgb(59, 59, 59);
   }
 }
 
-@media (max-height: 300px) {
+@media (max-height: 490px) {
   .cards {
     top: 230%;
   }
-  #container {
+  #container, #container2 {
     top: 60%;
   }
+} 
+
+.change-button {
+  width: 200px;
+  height: 50px;
+  border-radius: 15px;
+  border: 0;
+  background-color: #e0943c;
+  position: absolute;
+  left: 50%;
+  
+  transform: translate(-50%,-50%);
 }
 
 
