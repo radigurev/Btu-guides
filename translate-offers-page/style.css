@@ -116,7 +116,7 @@ img{
 
 #container  {
   position: absolute;
-  top: 500px;
+  top: 400px;
   left: 47%;
   transform: translate(-50%,-50%);
 }
@@ -221,7 +221,7 @@ img{
   height: 10rem;
   border-radius: 15px;
   width: 50%;
-  margin: 3% auto;
+  margin: 2% auto;
   font-weight: bold;
 }
 
@@ -229,9 +229,9 @@ img{
   width:110vw;
   background-color: rgb(110, 110, 110);
   display: grid;
-  grid-gap: 3rem;
+  grid-gap: 1rem;
   position: absolute;
-  top: 1300px;
+  top: 1100px;
   left: 47%;
   transform: translate(-50%,-50%);
   transition: all 0.5s ease;
@@ -275,7 +275,7 @@ img{
   background-color: #e0943c;
   position: absolute;
   left: 48.5%;
-  top: 200px;
+  top: 100px;
   color: #fff;
   font-size: large;
   transform: translate(-50%,-50%);
