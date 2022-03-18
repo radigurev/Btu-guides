@@ -17,6 +17,7 @@ body {
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
+    background-color: rgb(59, 59, 59);
 }
 
 header {
@@ -110,7 +111,7 @@ img{
 
 #container {
   position: absolute;
-  top: 400px;
+  top: 300px;
   left: 47%;
   transform: translate(-50%,-50%);
   margin: auto;
@@ -221,9 +222,9 @@ img{
   width:110vw;
   background-color: rgb(110, 110, 110);
   display: grid;
-  grid-gap: 3rem;
+  grid-gap: 2rem;
   position: absolute;
-  top: 1300px;
+  top: 900px;
   left: 47%;
   transform: translate(-50%,-50%);
   transition: all 0.5s ease;
