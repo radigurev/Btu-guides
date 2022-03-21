@@ -163,6 +163,10 @@ header::before {
     .history {
         left: 43%;
     }
+       .goals {
+           left: 40%;
+           top: 1600px;
+       }
     .left {
         font-size: 25px;
         top: 780px;
@@ -176,7 +180,7 @@ header::before {
     }
 
     .cards {
-        top: 2000px;
+        top: 2300px;
        left: 41%;
        font-size: 13px;
     }
@@ -222,8 +226,15 @@ header::before {
            left: 0%;
        }
        .image {
+           /*top: -70px;*/
            width: 80vw;
            left: 0%;
        }
       
    }
+
+    @media (max-width: 500px) {
+        .image {
+            top: -60px;
+        }
+    }
