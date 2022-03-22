@@ -1,0 +1,26 @@
+
+body {
+    background-color: #e0943c;
+}
+
+div {
+    background-color: #9c5503;
+    height: 300px;
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    text-align: center;
+}
+
+div>a {
+    position: relative;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 40px;
+    color: #fff;
+    display: block;
+}

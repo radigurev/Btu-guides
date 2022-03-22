@@ -126,7 +126,7 @@ header::before {
     color: #fff;
     font-weight: bold;
     position: absolute;
-    left: 50%;
+    left: 47%;
     transform: translate(-50%,-50%);
 }
 
@@ -134,12 +134,37 @@ header::before {
         color: #fff;
         font-weight: bold;
         position: absolute;
-        left: 47.5%;
+        left: 47%;
         top: 950px;
         transform: translate(-50%,-50%);
     }
-  
-   @Media (min-width: 800px) {
+
+.partners {
+    position: absolute;
+    top: 1750px;
+    left: 47%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+}
+
+.links {
+    position: absolute;
+    top: 1950px;
+    left: 48%;
+    transform: translate(-50%,-50%);
+    display: block;
+    text-align: center;
+}
+
+.links>a {
+    margin-bottom: 15px;
+    display: block;
+    font-size: 30px;
+    color: #fff;
+}
+
+
+@Media (min-width: 800px) {
     .cards { grid-template-columns: repeat(2, 1fr);
   }
   } 
@@ -164,7 +189,7 @@ header::before {
         left: 43%;
     }
        .goals {
-           left: 40%;
+           left: 43%;
            top: 1600px;
        }
     .left {
@@ -187,8 +212,19 @@ header::before {
     .grid {
       width: 70%;
     }
+
+    .partners {
+        top: 2950px;
+        left: 43%;
+    }
+
+    .links {
+        top: 3300px;
+        left: 43%;
+    }
   
    }
+
 
    @media (max-width:770px) {
        .image {
@@ -223,12 +259,14 @@ header::before {
        .left {
            width: 80vw;
            font-size: 15px;
-           left: 0%;
+           left: 0;
        }
        .image {
-           /*top: -70px;*/
            width: 80vw;
-           left: 0%;
+           left: 0;
+       }
+       .goals,.partners,.links {
+           left: 40%;
        }
       
    }

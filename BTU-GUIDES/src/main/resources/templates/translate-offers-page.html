@@ -9,19 +9,9 @@
         <link rel="stylesheet" href="/css/nav.css">
     </head>
     <body>
-        <nav class="navbar">
-            <input type="checkbox" id="check">
-            <label for="check" class="checkbtn">
-              <i class="fas fa-bars"></i>
-            </label>
-            <label class="logo">LOGO</label>
-            <ul>
-              <li><a  href="#home">Home</a></li>
-              <li><a  href="#about">Цели</a></li>
-              <li><a  href="#service">Услуги</a></li>
-              <li><a  href="#contact">Контакти</a></li>
-            </ul>
-          </nav>
+    <nav th:replace="fragments/nav::nav">
+
+    </nav>
         <header>
             <h1>Екскурзоводски услуги</h1>
         </header>
