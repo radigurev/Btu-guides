@@ -14,6 +14,8 @@ var containerWidth = container.offsetWidth;
 var prevKeyActive = false;
 var nextKeyActive = true;
 
+console.log(slides)
+
 window.addEventListener("resize", checkWidth);
 
 function checkWidth() {

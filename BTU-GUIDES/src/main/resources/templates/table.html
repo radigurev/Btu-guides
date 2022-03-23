@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="table">
-    
         <div class="wrapper">
           <div class="table">
             <div class="row header">
@@ -19,12 +18,12 @@
                 Remove
               </div>
             </div>
-            <div class="row">
+            <div class="row" th:each="e : ${rows}">
               <div class="cell" data-title="Name">
-                <p name="name">Luke Peters</p>
+                <p th:text="${e.name}" name="name">Luke Peters</p>
               </div>
               <div class="cell div-grade"  name="div-grade" data-title="Location">
-                    <a href="">Remove</a>
+                    <a th:href="@{/admin/edit/site/97979f2c-aa80-11ec-b909-0242ac120002/remove/{id}(id=${e.id})}">Remove</a>
               </div>
               </div>
           </div>

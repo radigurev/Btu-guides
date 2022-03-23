@@ -2,26 +2,18 @@ package btuguides.models.binding;
 
 import btuguides.models.entity.Workers;
 
-public class TripBindingModel {
-    private String title;
-    private String imageUrl;
+public class CoursesBindingModel {
+    private String name;
     private String description;
+    private String url;
     private String worker;
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -30,6 +22,14 @@ public class TripBindingModel {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getWorker() {

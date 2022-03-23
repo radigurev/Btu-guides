@@ -12,6 +12,7 @@ var page='first';
 var btn=document.getElementById('change-button');
 
 var currentPosition = 0;
+
 var currentMargin = 0;
 var slidesPerPage = 0;
 var times=0;
@@ -143,30 +144,24 @@ function changeSlider() {
     setTimeout(function() {
         container.classList.remove('hidden');
         slides = document.getElementsByClassName('slide').length;
-        buttons.forEach(b => {
-            b.classList.remove('btn');
-            b.classList.add('btn2');
-        })
         fsSlides.forEach(s => {
             s.classList.remove('slide');
             s.classList.add('slide2');
-            
-        })
-        document.getElementsByClassName('btn2').forEach(b => {
-            b.classList.remove('btn2');
-            b.classList.add('btn');
         })
         buttons = document.getElementsByClassName('btn');
+         container = document.getElementById('container')
+         slider = document.getElementById('slider');
+         slides = document.getElementsByClassName('slide').length;
+         buttons = document.getElementsByClassName('btn');
          currentPosition = 0;
          currentMargin = 0;
-        slidesPerPage = 0;
+         containerWidth = container.offsetWidth;
         slides=document.getElementsByClassName('slide').length;
+        console.log(slides);
         slidesCount = slides - slidesPerPage;
-        containerWidth = container.offsetWidth;
         prevKeyActive = false;
         nextKeyActive = true;
     },510);
-    console.log(ssSlides)
     ssSlides.forEach(s => {
         s.classList.remove('slide2');
         s.classList.add('slide');

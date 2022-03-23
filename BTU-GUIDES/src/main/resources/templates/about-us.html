@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -66,12 +66,8 @@
             <h1 class="partners">Партньори</h1>
 
             <div class="links">
-                <a href="">Софийски туристически район</a>
-                <a href="">Български Туристически Съюз</a>
-                <a href="">Национален съюз на трудово – производителните
-                    кооперации</a>
-                <a href="">Градски съюз на трудово – производителните кооперации</a>
-                <a href="">Асоциация на екскурзоводите в България</a>
+
+                <a th:each="p : ${partners}" th:text="${p.name}" th:href="|https://${p.url}|">Софийски туристически район</a>
             </div>
 
         </div>

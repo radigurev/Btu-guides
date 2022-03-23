@@ -1,13 +1,6 @@
-package btuguides.models.entity;
+package btuguides.models.binding;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import java.util.Set;
-
-@Entity
-@Table(name = "workers")
-public class Workers extends BaseEntity{
+public class WorkerBindingModel {
     private String firstName;
     private String lastName;
     private String url;

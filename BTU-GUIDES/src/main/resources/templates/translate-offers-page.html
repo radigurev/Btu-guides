@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,163 +18,44 @@
         <div class="container">
           <button type="button" class="change-button" id="change-button" onclick="changeSlider()">Преводачески услуги</button>
                 <div id="container">
-                    <div id="slider-container">
+                    <div class="slider-container">
                       <span onclick="slideRight()" class="btn"></span>
                         <div id="slider">
-                          <div class="slide"><div class="card">
-                        <figure >
-                          <img src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
-                        </figure>
-                        <div class="card-body">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                          <a href="">Има фамилия</a>
-                        </div>
-                  </div></div>
-                   <div class="slide"><div class="card" >
-                        <figure >
-                          <img src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
-                        </figure>
-                        <div class="card-body">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                          <a href="">Има фамилия</a>
-                        </div>
-                  </div></div>
-                          <div class="slide"><div class="card" >
+
+                          <div class="slide" th:each="t : ${trips}"><div class="card">
                         <figure>
-                            <img src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
+                            <img th:src="${t.imageUrl}" alt="Hotel" >
                         </figure>
-                  
+
                         <div class="card-body">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                          <a href="">Има фамилия</a>
+                          <h5 class="card-title" th:text="|${t.title}|">Hotel 1</h5>
+                          <p class="card-text" th:text="|${t.description}|"> </p>
+                          <a th:href="@{/translators}" th:text="|${t.worker.firstName} ${t.worker.lastName}|">Има фамилия</a>
                         </div>
                   </div></div>
-                          <div class="slide"><div class="card" >
-                        <figure >
-                            <img src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
-                        </figure>
-                  
-                        <div class="card-body">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                          <a href="">Има фамилия</a>
-                        </div>
-                  </div></div>
-                          <div class="slide"><div class="card">
-                        <figure >
-                            <img src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
-                        </figure>
-                  
-                        <div class="card-body">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                          <a href="">Има фамилия</a>
-                        </div>
-                  </div></div>
-                          <div class="slide"><div class="card" >
-                        <figure >
-                            <img src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
-                        </figure>
-                  
-                        <div class="card-body">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                          <a href="">Има фамилия</a>
-                        </div>
-                  </div></div>
-                          <div class="slide"><div class="card">
-                        <figure >
-                            <img src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
-                        </figure>
-                  
-                        <div class="card-body">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                          <a href="">Има фамилия</a>
-                        </div>
-                  </div></div>
+
                       </div>
                       <span onclick="slideLeft()" class="btn"></span>
                     </div>
                   </div>
                     <!-- Second Slider -->
                   <div class="hidden" id="container2">
-                    <div id="slider-container">
+                    <div class="slider-container">
                       <span onclick="slideRight()" class="btn"></span>
                       <br>
                         <div id="slider2">
-                          <div class="slide2"><div class="card2">
-                        <figure >
-                          <img class="animatedImg" src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
-                        </figure>
-                        <div class="card-body hidden">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                        </div>
-                  </div></div>
-                  <div class="slide2"><div class="card2">
+
+                  <div class="slide2" th:each="t : ${translate}"><div class="card2">
                     <figure >
-                          <img class="animatedImg" src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
-                        </figure>
-                        <div class="card-body hidden">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                        </div>
-                        </div>
-                  </div>
-                  <div class="slide2"><div class="card2">
-                    <figure>
-                            <img class="animatedImg" src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
+                            <img class="animatedImg" th:src="${t.url}" alt="Hotel" >
                         </figure>
                   
                         <div class="card-body hidden">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                          <h5 class="card-title" th:text="${t.title}">Title</h5>
+                          <p class="card-text" th:text="${t.description}">simply dummy text</p>
                         </div>
                   </div></div>
-                  <div class="slide2"><div class="card2">
-                    <figure >
-                            <img class="animatedImg" src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
-                        </figure>
-                  
-                        <div class="card-body hidden">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                        </div>
-                  </div></div>
-                  <div class="slide2"><div class="card2">
-                    <figure >
-                            <img class="animatedImg" src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
-                        </figure>
-                  
-                        <div class="card-body hidden">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                        </div>
-                  </div></div>
-                  <div class="slide2"><div class="card2">
-                    <figure >
-                            <img class="animatedImg" src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
-                        </figure>
-                  
-                        <div class="card-body hidden">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                        </div>
-                  </div></div>
-                  <div class="slide2"><div class="card2">
-                    <figure >
-                            <img class="animatedImg" src="https://wallpaperaccess.com/full/2029165.jpg" alt="Hotel" >
-                        </figure>
-                  
-                        <div class="card-body hidden">
-                          <h5 class="card-title">Hotel 1</h5>
-                          <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                        </div>
-                  </div></div>
+
                       </div>
                       <span onclick="slideLeft()" class="btn"></span>
                     </div>
