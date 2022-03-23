@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-        <div>
-            <input type="text" placeholder="Заглавие">
-            <input type="text" placeholder="линк за снимка на картата">
-            <input type="text" placeholder="кратко пояснение">
-            <select name="" id="">
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-            </select>
-        </div>
+<form th:action="@{/admin/edit/site/97979f2c-aa80-11ec-b909-0242ac120002/trips}" th:method="POST" th:object="${tripBindingModel}">
+    <div>
+        <input th:field="*{title}" type="text" placeholder="Заглавие">
+        <input th:field="*{url}" type="text" placeholder="линк за снимка на картата">
+        <input th:field="*{description}" type="text" placeholder="кратко пояснение">
+        <select th:field="*{worker}" name="" id="">
+            <option value="">Options</option>
+            <option th:each="w : ${workers}" th:value="w">Options</option>
+        </select>
+    </div>
+</form>
 </body>
 </html>

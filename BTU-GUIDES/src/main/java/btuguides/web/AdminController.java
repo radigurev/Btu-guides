@@ -1,9 +1,11 @@
 package btuguides.web;
 
 import btuguides.models.binding.PartnersBindingModel;
+import btuguides.models.binding.TripBindingModel;
 import btuguides.service.PartnerService;
-import org.modelmapper.ModelMapper;
+import btuguides.service.WorkerService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,13 +16,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AdminController {
 
     private final PartnerService partnerService;
-    public AdminController(PartnerService partnerService) {
+    private final WorkerService workerService;
+
+    public AdminController(PartnerService partnerService, WorkerService workerService) {
         this.partnerService = partnerService;
+        this.workerService = workerService;
     }
 
     @ModelAttribute
     public PartnersBindingModel partnersBindingModel() {
         return new PartnersBindingModel();
+    }
+
+    @ModelAttribute
+    public TripBindingModel tripBindingModel() {
+        return new TripBindingModel();
     }
 
     @GetMapping("")
@@ -29,7 +39,8 @@ public class AdminController {
     }
 
     @GetMapping("/trips")
-    public String returnTrips() {
+    public String returnTrips(Model model) {
+        model.addAttribute("workers",workerService.findAll());
         return "add-trip";
     }
 
