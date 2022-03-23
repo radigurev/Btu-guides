@@ -1,0 +1,48 @@
+package btuguides.models.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "trips")
+public class Trips extends BaseEntity {
+    private String title;
+    private String description;
+    private String imageUrl;
+    private Workers worker;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    @Column(columnDefinition = "TEXT")
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    @ManyToOne
+    public Workers getWorker() {
+        return worker;
+    }
+
+    public void setWorker(Workers worker) {
+        this.worker = worker;
+    }
+}
