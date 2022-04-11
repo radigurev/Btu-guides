@@ -5,6 +5,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <link rel="stylesheet" href="/css/nav3.css">
         <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="/js/recaptcha.js"></script>
     </head>
 <body>
     <div class="container">
@@ -78,6 +80,9 @@
                 <div class="form-group">
                   <button type="submit" class="submit"><i class="far fa-paper-plane"></i>Send</button>
                 </div>
+                  <div class="g-recaptcha" data-sitekey="6LcJ3GMfAAAAAGfEaxaWoSXg_5yRsh7lMzDskVwq">
+                  </div>
+                  <span th:text="${verification}"></span>
               </form>
             </div>
         </div>
