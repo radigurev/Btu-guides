@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Controller
 public class HomeController {
-    private String message="";
+    private String message=" ";
 
     private final PartnerService partnerService;
     private final WorkerService workerService;
@@ -28,7 +28,7 @@ public class HomeController {
         this.courseService = courseService;
         this.restTemplate = restTemplate;
     }
-
+//samo levski i sajdi
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("verification",message);

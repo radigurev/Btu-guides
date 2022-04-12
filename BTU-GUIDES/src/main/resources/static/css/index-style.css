@@ -361,6 +361,11 @@ button {
   font-family: inherit;
   font-size: initial;
 }
+
+textarea {
+    height: 60px;
+}
+
 .form-group label {
   display: block;
   margin: 2rem 0 0.5rem 0;
@@ -411,7 +416,16 @@ i {
 .form-group input[type="text"]:focus,
 .form-group input[type="email"]:focus,
 .form-group textarea:focus {
+    padding-left: 15px;
   border: 1px solid #222;
+}
+
+.g-recaptcha {
+    margin-top: 40px;
+}
+
+.robot-message {
+    margin-top: 15px;
 }
 
 @media screen and (min-width: 576px) {
