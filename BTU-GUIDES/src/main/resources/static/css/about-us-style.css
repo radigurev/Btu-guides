@@ -116,7 +116,7 @@ header::before {
     grid-gap: 2rem;
     position: absolute;
     top: 1400px;
-    left: 47%;
+    left: 48%;
     transform: translate(-50%,-50%);
     transition: all 0.5s ease;
     text-align: justify; 
@@ -126,7 +126,7 @@ header::before {
     color: #fff;
     font-weight: bold;
     position: absolute;
-    left: 47%;
+    left: 50%;
     transform: translate(-50%,-50%);
 }
 
@@ -134,7 +134,7 @@ header::before {
         color: #fff;
         font-weight: bold;
         position: absolute;
-        left: 47%;
+        left: 50%;
         top: 950px;
         transform: translate(-50%,-50%);
     }
@@ -142,15 +142,15 @@ header::before {
 .partners {
     position: absolute;
     top: 1750px;
-    left: 47%;
+    left: 50%;
     transform: translate(-50%,-50%);
     color: #fff;
 }
 
 .links {
     position: absolute;
-    top: 1950px;
-    left: 48%;
+    top: 2150px;
+    left: 50%;
     transform: translate(-50%,-50%);
     display: block;
     text-align: center;
@@ -185,11 +185,8 @@ header::before {
     }
   
    @media (max-width:800px) {
-    .history {
-        left: 43%;
-    }
+
        .goals {
-           left: 43%;
            top: 1600px;
        }
     .left {
@@ -206,21 +203,19 @@ header::before {
 
     .cards {
         top: 2300px;
-       left: 41%;
        font-size: 13px;
     }
     .grid {
       width: 70%;
+        margin-left: 9%;
     }
 
     .partners {
         top: 2950px;
-        left: 43%;
     }
 
     .links {
         top: 3300px;
-        left: 43%;
     }
   
    }
@@ -250,7 +245,7 @@ header::before {
        .left {
            left: -1%;
        }
-       .history {
+       .history, .goals, .links, .partners {
            left: 40%;
        }
    }
@@ -265,14 +260,14 @@ header::before {
            width: 80vw;
            left: 0;
        }
-       .goals,.partners,.links {
-           left: 40%;
-       }
+        .grid {
+            margin-left: 5%;
+        }
       
    }
 
     @media (max-width: 500px) {
         .image {
-            top: -60px;
+            top: -45px;
         }
     }

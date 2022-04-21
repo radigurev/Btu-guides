@@ -1,3 +1,12 @@
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333;
+  color: #fff;
+  height: 100vh;
+  line-height: 1.6;
+  overflow: hidden;
+}
 nav{
     background: #e0943c;
     height: 80px;
@@ -33,7 +42,7 @@ nav{
     text-transform: uppercase;
   }
   nav ul li a.active,nav ul li a:hover{
-    background: #1b9bff;
+    background: #ad7233;
     transition: .5s;
     border-radius: 10px;
 
@@ -84,7 +93,7 @@ nav{
     }
    nav ul li a:hover,a.active{
       background: none;
-      color: #0082e6;
+      color: #000;
     }
     #check:checked ~ ul{
       left: 0;
