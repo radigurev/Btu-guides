@@ -12,5 +12,5 @@ public interface CourseService {
 
     Object findAll();
 
-    Object find();
+    Object find(String type);
 }

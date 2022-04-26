@@ -9,7 +9,8 @@ import javax.persistence.Table;
 public class Partners extends BaseEntity{
         private String name;
         private String url;
-
+        private String type;
+        private String companyUrl;
 
     public String getName() {
         return name;
@@ -25,5 +26,21 @@ public class Partners extends BaseEntity{
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    @Column(name = "company_url")
+    public String getCompanyUrl() {
+        return companyUrl;
+    }
+
+    public void setCompanyUrl(String companyUrl) {
+        this.companyUrl = companyUrl;
     }
 }

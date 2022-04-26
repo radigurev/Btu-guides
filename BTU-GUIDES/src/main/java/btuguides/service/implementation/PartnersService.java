@@ -49,7 +49,9 @@ public class PartnersService implements PartnerService {
     }
 
     @Override
-    public Object find() {
-        return partnerRepository.findAll();
+    public Object find(String type) {
+        return partnerRepository.findAllByType(type);
     }
+
+
 }

@@ -12,5 +12,5 @@ public interface TripService {
 
     Object findAll();
 
-    Object find();
+    Object find(String type);
 }

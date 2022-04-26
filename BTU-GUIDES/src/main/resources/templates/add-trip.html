@@ -14,6 +14,10 @@
         <input th:field="*{title}" type="text" placeholder="Заглавие">
         <input th:field="*{imageUrl}" type="text" placeholder="линк за снимка на картата">
         <input th:field="*{description}" type="text" placeholder="кратко пояснение">
+        <select th:field="*{type}" name="" id="a">
+            <option value="Bulgaria">България</option>
+            <option value="Intr">Чужбина</option>
+        </select>
         <select th:field="*{worker}" name="" id="">
             <option value="">Options</option>
             <option th:each="w : ${workers}" th:value="${w}" th:text="${w}">Options</option>

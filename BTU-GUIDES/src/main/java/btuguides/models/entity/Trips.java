@@ -11,6 +11,7 @@ public class Trips extends BaseEntity {
     private String title;
     private String description;
     private String imageUrl;
+    private String type;
     private Workers worker;
 
     public String getTitle() {
@@ -28,6 +29,15 @@ public class Trips extends BaseEntity {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Column(columnDefinition = "TEXT")
     public String getImageUrl() {
         return imageUrl;

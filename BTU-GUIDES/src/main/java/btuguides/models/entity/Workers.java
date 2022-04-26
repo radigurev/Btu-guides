@@ -12,6 +12,7 @@ public class Workers extends BaseEntity{
     private String lastName;
     private String url;
     private String city;
+    private String languages;
 
     public String getFirstName() {
         return firstName;
@@ -43,5 +44,13 @@ public class Workers extends BaseEntity{
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String languages) {
+        this.languages = languages;
     }
 }

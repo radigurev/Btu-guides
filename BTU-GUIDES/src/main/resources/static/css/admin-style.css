@@ -4,7 +4,6 @@ body {
 }
 
 div {
-    background-color: #9c5503;
     height: 300px;
     width: 40%;
     position: absolute;
@@ -27,16 +26,17 @@ div>a {
 
 div > input {
     position: relative;
-    top: 20%;
+    top: 10%;
     left: 31%;
     display: block;
     margin-bottom: 15px;
     width: 40%;
     height: 40px;
 }
-
+div>select {
+    margin-top: 10%;
+}
 .div-main {
-    background-color: #9c5503;
     height: 300px;
     width: 40%;
     position: absolute;
@@ -48,7 +48,6 @@ div > input {
 }
 
 .div-main2 {
-    background-color: #9c5503;
     height: 300px;
     width: 40%;
     position: absolute;

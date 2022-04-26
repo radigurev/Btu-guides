@@ -8,7 +8,9 @@ public class Courses extends BaseEntity{
     private String name;
     private String description;
     private String url;
-    private Workers worker;
+    private String worker;
+    private String workerUrl;
+    private String type;
 
     public String getName() {
         return name;
@@ -34,12 +36,27 @@ public class Courses extends BaseEntity{
         this.url = url;
     }
 
-    @ManyToOne
-    public Workers getWorker() {
+    public String getWorker() {
         return worker;
     }
 
-    public void setWorker(Workers worker) {
+    public void setWorker(String worker) {
         this.worker = worker;
+    }
+    @Column(name = "worker_url")
+    public String getWorkerUrl() {
+        return workerUrl;
+    }
+
+    public void setWorkerUrl(String workerUrl) {
+        this.workerUrl = workerUrl;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

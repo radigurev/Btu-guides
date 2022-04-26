@@ -12,5 +12,5 @@ public interface PartnerService {
 
     Object findAll();
 
-    Object find();
+    Object find(String type);
 }

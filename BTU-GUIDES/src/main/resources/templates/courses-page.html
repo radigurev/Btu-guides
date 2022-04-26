@@ -28,7 +28,7 @@
                                       <div class="card-body">
                                           <h5 class="card-title" th:text="${c.name}">title</h5>
                                           <p class="card-text" th:text="${c.description}"> simply dummy text  </p>
-                                          <a href="" th:text="|${c.worker.firstName} ${c.worker.lastName}|">Има фамилия</a>
+                                          <a th:href="@{${c.workerUrl}}" th:text="${c.worker}">Имe фамилия</a>
                                       </div>
                                   </div></div>
                             </div>

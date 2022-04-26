@@ -49,7 +49,8 @@ public class HomeController {
 
     @GetMapping("/about")
     public String aboutPage(Model model) {
-        model.addAttribute("partners",partnerService.find());
+        model.addAttribute("partners",partnerService.find("partner"));
+        model.addAttribute("otherPartners",partnerService.find("bigPartner"));
         return "about-us";
     }
 
@@ -65,24 +66,44 @@ public class HomeController {
     }
     @GetMapping("/courses")
     public String coursePage() {
-        return "trip-select-page";
+        return "courses-select-page";
     }
-    @GetMapping("/courses/bulgaria")
+    @GetMapping("/courses/seminars")
     public String courseBulgariaPage(Model model) {
-        model.addAttribute("courses",courseService.find());
+        model.addAttribute("courses",courseService.find("Seminar"));
         return "courses-page";
     }
-    @GetMapping("/courses/internationally")
-    public String courseInternationallyPage(Model model) {
-        model.addAttribute("courses",courseService.find());
+    @GetMapping("/courses/course")
+    public String coursesPage(Model model) {
+        model.addAttribute("courses",courseService.find("Course"));
         return "courses-page";
     }
+
+    @GetMapping("/courses/training")
+    public String coursesTrainingPage(Model model) {
+        model.addAttribute("courses",courseService.find("Training"));
+        return "courses-page";
+    }
+
     @GetMapping("/offers")
-    public String offersPage(Model model) {
-        model.addAttribute("trips",tripService.find())
+    public String offersPage() {
+       return "trip-select-page";
+    }
+
+    @GetMapping("/offers/bulgaria")
+    public String offersBulgariaPage(Model model) {
+        model.addAttribute("trips",tripService.find("Bulgaria"))
                 .addAttribute("translate",translateService.find());
         return "translate-offers-page";
     }
+
+    @GetMapping("/offers/internationally")
+    public String offersInternationallyPage(Model model) {
+        model.addAttribute("trips",tripService.find("Intr"))
+                .addAttribute("translate",translateService.find());
+        return "translate-offers-page";
+    }
+
     @PostMapping("/")
     public String postIndexPage(@RequestParam (name="g-recaptcha-response") String captchaResponse,ContactBindingModel contactBindingModel) {
         String url="https://www.google.com/recaptcha/api/siteverify";

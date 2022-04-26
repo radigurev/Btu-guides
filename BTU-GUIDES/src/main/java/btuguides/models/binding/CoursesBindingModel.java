@@ -7,6 +7,9 @@ public class CoursesBindingModel {
     private String description;
     private String url;
     private String worker;
+    private String workerUrl;
+    private String isHere;
+    private String type;
 
     public String getName() {
         return name;
@@ -38,5 +41,29 @@ public class CoursesBindingModel {
 
     public void setWorker(String worker) {
         this.worker = worker;
+    }
+
+    public String getWorkerUrl() {
+        return workerUrl;
+    }
+
+    public void setWorkerUrl(String workerUrl) {
+        this.workerUrl = workerUrl;
+    }
+
+    public String getIsHere() {
+        return isHere;
+    }
+
+    public void setIsHere(String isHere) {
+        this.isHere = isHere;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

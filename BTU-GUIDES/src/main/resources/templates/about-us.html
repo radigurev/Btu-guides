@@ -72,19 +72,12 @@
 
             <div class="slider-container">
                 <section class="customer-logos slider">
-                    <div class="slide"><a href="http://www.proekt7.eu/"><img src="https://orangemagazine.ph/wp-content/uploads/2021/08/PhotoGrid_Plus_1630135806270-scaled.jpg"></a></div>
-                    <div class="slide"><a href="http://www.proekt7.eu/"><img src="https://i.pinimg.com/736x/a1/0e/e1/a10ee1adbbf049389c36e556d09ddfe1--frito-lay-le-logo.jpg"></a></div>
-                    <div class="slide"><a href="http://www.proekt7.eu/"><img src="https://orangemagazine.ph/wp-content/uploads/2021/08/PhotoGrid_Plus_1630135806270-scaled.jpg"></a></div>
-                    <div class="slide"><a href="http://www.proekt7.eu/"><img src="https://i.pinimg.com/736x/a1/0e/e1/a10ee1adbbf049389c36e556d09ddfe1--frito-lay-le-logo.jpg"></a></div>
-                    <div class="slide"><a href="http://www.proekt7.eu/"><img src="https://orangemagazine.ph/wp-content/uploads/2021/08/PhotoGrid_Plus_1630135806270-scaled.jpg"></a></div>
-                    <div class="slide"><a href="http://www.proekt7.eu/"><img src="https://i.pinimg.com/736x/a1/0e/e1/a10ee1adbbf049389c36e556d09ddfe1--frito-lay-le-logo.jpg"></a></div>
-                    <div class="slide"><a href="http://www.proekt7.eu/"><img src="https://orangemagazine.ph/wp-content/uploads/2021/08/PhotoGrid_Plus_1630135806270-scaled.jpg"></a></div>
-                    <div class="slide"><a href="http://www.proekt7.eu/"><img src="https://i.pinimg.com/736x/a1/0e/e1/a10ee1adbbf049389c36e556d09ddfe1--frito-lay-le-logo.jpg"></a></div>
-                </section>
+                    <div th:each="p : ${otherPartners}" class="slide"><a th:href="@{${p.url}}"><img th:src="@{${p.companyUrl}}"></a></div>
+                        </section>
             </div>
 
             <div class="links">
-                <a th:each="p : ${partners}" th:text="${p.name}" th:href="|https://${p.url}|">Софийски туристически район</a>
+                <a th:each="p : ${partners}" th:text="${p.name}" th:href="@{${p.url}}">Софийски туристически район</a>
             </div>
 
         </div>

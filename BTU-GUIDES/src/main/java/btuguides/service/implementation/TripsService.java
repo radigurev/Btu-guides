@@ -56,8 +56,8 @@ public class TripsService implements TripService {
     }
 
     @Override
-    public Object find() {
-        return tripRepository.findAll();
+    public Object find(String type) {
+        return tripRepository.findAllByType(type);
     }
 }
 

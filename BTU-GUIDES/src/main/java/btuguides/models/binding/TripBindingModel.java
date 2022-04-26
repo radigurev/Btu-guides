@@ -1,11 +1,10 @@
 package btuguides.models.binding;
 
-import btuguides.models.entity.Workers;
-
 public class TripBindingModel {
     private String title;
     private String imageUrl;
     private String description;
+    private String type;
     private String worker;
 
     public String getTitle() {
@@ -26,6 +25,14 @@ public class TripBindingModel {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public void setDescription(String description) {

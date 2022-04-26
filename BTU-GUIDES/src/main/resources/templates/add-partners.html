@@ -14,6 +14,11 @@
     <div>
         <input th:field="*{name}" type="text" placeholder="Име">
         <input th:field="*{url}" type="text" placeholder="линк">
+        <select th:field="*{type}" name="" id="">
+            <option value="partner">Партньор</option>
+            <option value="bigPartner">Голям партньор</option>
+        </select>
+        <input th:field="*{companyUrl}" type="text" placeholder="Линк за снимка">
     </div>
 
 </form>

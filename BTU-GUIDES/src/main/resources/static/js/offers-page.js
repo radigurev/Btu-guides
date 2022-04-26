@@ -114,11 +114,7 @@ function changeSlider() {
       cards2=[...document.getElementsByClassName('card2')];
       fsSlides=[...document.getElementsByClassName('slide')];
       ssSlides=[...document.getElementsByClassName('slide2')];
-        if(btn.innerText==='Преводачески услуги'){
-            btn.innerText='Екскурзоводски услуги';
-        } else {
-            btn.innerText='Преводачески услуги';
-        }
+
 
        setTimeout(function () {
             container.classList.add('hidden');

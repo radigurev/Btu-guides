@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/nav3.css">
+    <link rel="stylesheet" href="/css/course-select-style.css"/>
+    <link rel="stylesheet" href="/css/responsive-cards.css"/>
+</head>
+<body>
+<nav th:replace="fragments/nav::nav">
+
+</nav>
+<header>
+    <h1>Курсове, обучения и семинари</h1>
+</header>
+
+
+<div class="container">
+    <div class="container-cards">
+        <div class="card">
+            <figure class="card__thumb">
+                <img src="https://source.unsplash.com/75S9fpDJVdo/300x510" alt="Picture by Kyle Cottrell" class="card__image">
+                <figcaption class="card__caption">
+                    <h2 class="card__title">Курсове </h2>
+                    <br><br>
+                    <p class="card__snippet">Туристически услуги в България</p>
+                    <a href="/courses/course" class="card__button">Вижте повече</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="card">
+            <figure class="card__thumb">
+                <img src="https://source.unsplash.com/75S9fpDJVdo/300x510" alt="Picture by Kyle Cottrell" class="card__image">
+                <figcaption class="card__caption">
+                    <h2 class="card__title">Семинари</h2>
+                    <br><br>
+                    <p class="card__snippet">Туристически услуги в България</p>
+                    <a href="/courses/seminars" class="card__button">Вижте повече</a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="card">
+            <figure class="card__thumb">
+                <img src="https://source.unsplash.com/75S9fpDJVdo/300x510" alt="Picture by Nathan Dumlao" class="card__image">
+                <figcaption class="card__caption">
+                    <h2 class="card__title">Обучение</h2>
+                    <br><br>
+                    <p class="card__snippet">Туристически услуги извън България</p>
+                    <a href="/courses/training" class="card__button">Вижте повече</a>
+                </figcaption>
+            </figure>
+        </div>
+
+    </div>
+
+    <div class="cards">
+        <div class="grid">Организиране, провеждане и удостоверяване на курсове
+            за професионално обучение на екскурзоводи и тур – лидери,
+            съгласно изискванията на закона за туризма и образованието.</div>
+        <div class="grid">Организиране, провеждане и удостоверяване на
+            практически занимания на завършилите обучение, включително в системата на средното
+            и висше образование, екскурзоводи и тур-лидери, съгласно
+            изискванията на закона за туризма и образованието.</div>
+        <div class="grid">Организиране, провеждане и удостоверяване на
+            специализирани езикови курсове за квалификация и/или
+            преквалификация в сферата на туризма.</div>
+        <div class="grid">Организиране и провеждане на образователни курсове,
+            включително общо и специализирано, присъствено и онлайн
+            езиково обучение на деца, ученици и възрастни.</div>
+    </div>
+</div>
+
+</body>
+</html>

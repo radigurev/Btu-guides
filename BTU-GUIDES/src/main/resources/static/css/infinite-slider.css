@@ -3,7 +3,6 @@
 .slider-container {
     margin-top: 1800px;
     height: 40%;
-    margin-left: -200px;
 }
 .slick-slide {
     margin: 0 20px;
@@ -124,6 +123,6 @@
 
 @media (max-width: 800px) {
     .slider-container {
-        margin-top: 3000px;
+        margin-top: 3250px;
     }
 }
