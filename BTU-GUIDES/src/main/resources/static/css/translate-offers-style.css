@@ -13,7 +13,7 @@ body {
     transform-style: preserve-3d;
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: rgb(59, 59, 59);
+    background-color: rgb(126, 123, 123);
   }
 
 header {
@@ -62,7 +62,7 @@ header::before {
     top: 100vh;
     width: 100vw;
     height: 120vh;
-    background-color: rgb(59, 59, 59);
+    background-color: rgb(126, 123, 123);
     line-height: 30px;
     font-weight: lighter;
     color: grey;

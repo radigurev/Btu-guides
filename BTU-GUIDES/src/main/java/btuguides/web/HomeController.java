@@ -70,18 +70,21 @@ public class HomeController {
     }
     @GetMapping("/courses/seminars")
     public String courseBulgariaPage(Model model) {
-        model.addAttribute("courses",courseService.find("Seminar"));
+        model.addAttribute("courses",courseService.find("Seminar"))
+                .addAttribute("title","Семинари");
         return "courses-page";
     }
     @GetMapping("/courses/course")
     public String coursesPage(Model model) {
-        model.addAttribute("courses",courseService.find("Course"));
+        model.addAttribute("courses",courseService.find("Course"))
+                .addAttribute("title","Курсове");
         return "courses-page";
     }
 
     @GetMapping("/courses/training")
     public String coursesTrainingPage(Model model) {
-        model.addAttribute("courses",courseService.find("Training"));
+        model.addAttribute("courses",courseService.find("Training"))
+                .addAttribute("title","Обучения");
         return "courses-page";
     }
 
