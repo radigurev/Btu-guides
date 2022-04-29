@@ -18,7 +18,7 @@
 
     </nav>
         <header>
-            <h1>ЗА НАС</h1>
+            <h1 id="aboutTitle">ЗА НАС</h1>
         </header>
         <div class="container">
             <h1 class="history">История</h1>
@@ -82,4 +82,19 @@
 
         </div>
     </body>
+
+    <script>
+        var language = {
+            en: {
+                title:"About us"
+            },
+            bg: {
+                title:"За нас"
+            }
+        }
+
+        function changeLanguage() {
+            aboutTitle.textContent=language.en.title;
+        }
+    </script>
 </html>

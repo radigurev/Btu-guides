@@ -7,6 +7,7 @@
         <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="/js/recaptcha.js"></script>
+        <script src="/js/translate.js"></script>
     </head>
 <body>
     <div class="container">
@@ -14,8 +15,8 @@
 
         </nav>
         <section id="home">
-          <h1>КООПЕРАЦИЯ БТС-ЕКСКУРЗОВОДИ</h1>
-          <a href="/about">ПОВЕЧЕ ЗА НАС</a>
+          <h1 id="nameBtu">КООПЕРАЦИЯ БТС-ЕКСКУРЗОВОДИ</h1>
+          <a id="homeBtn" href="/about">ПОВЕЧЕ ЗА НАС</a>
         </section>
         <section id="about">
             <h1>НАШИТЕ ЧЛЕН-КООПЕРАТОРИ</h1>
@@ -96,4 +97,30 @@
         </div>
     </footer>
     </body>
+
+    <script>
+        var language = {
+            en: {
+                comName:"BTU-GUIDES",
+                contact:"Contact",
+                homeButton: "About us"
+            },
+            bg: {
+                comName:"КООПЕРАЦИЯ БТС-ЕКСКУРЗОВОДИ",
+                contact:"Контакт",
+                homeButton: "Повече за нас"
+            }
+        }
+        function changeLanguage() {
+                    if(nameBtu.textContent==='КООПЕРАЦИЯ БТС-ЕКСКУРЗОВОДИ') {
+                        nameBtu.textContent=language.en.comName;
+                        contactNav.textContent=language.en.contact;
+                        homeBtn.textContent=language.en.homeButton;
+                    }else {
+                        nameBtu.textContent=language.bg.comName;
+                        contactNav.textContent=language.bg.contact;
+                        homeBtn.textContent=language.bg.homeButton;
+                    }
+        }
+    </script>
 </html>
