@@ -12,7 +12,7 @@
     overflow: hidden;
   }
 nav{
-    background: #e0943c;
+    background: #00d7ff;
     height: 80px;
     width: 100%;
     position: fixed;
@@ -44,7 +44,7 @@ nav{
     text-transform: uppercase;
   }
  nav ul li a.active,nav ul li a:hover{
-    background-color: #ad7233;
+    background-color: #13b2d5;
     transition: .5s;
     border-radius: 10px;
 

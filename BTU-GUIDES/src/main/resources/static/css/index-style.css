@@ -59,7 +59,7 @@
     margin-top: 6%;
     border-radius: 15px;
     border: 0px;
-    background-color: #1b9bff;
+    background-color: #ff9200;
     transition: all 0.5s ease;
     text-decoration: none;
     font-size: 17px;
@@ -70,12 +70,12 @@
   }
 
   section > a:hover {
-    background-color: #0472c7;
+    background-color: #e08307;
   }
   
    /* Section Images */
    section#home {
-    background: url('https://www.thehotdesktop.com/web/wallpapers/just-another-skull-4k-wallpaper/1920x1080.jpg') no-repeat center center/cover;;
+    background: url('https://res.cloudinary.com/dzqj0bike/image/upload/v1652173280/btu-guides/pexels-matt-hardy-2658459_mnqali.jpg') no-repeat center center/cover;;
   }
   
   section#about {
@@ -347,7 +347,7 @@ button::selection {
     border-radius: 15px;
 }
 #contact>.wrapper >h2 {
-  background: #e0943c;
+  background: #e08307;
   letter-spacing: 0.1rem;
   padding: 1rem;
   cursor: default;
@@ -401,7 +401,7 @@ textarea {
   margin-top: 1rem;
   padding: 1rem 1.5rem;
   border: none;
-  background: #e0943c;
+  background: #ff9300;
   cursor: pointer;
   transition:  0.15s;
   border-radius: 15px;
