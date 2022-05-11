@@ -71,20 +71,23 @@ public class HomeController {
     @GetMapping("/courses/seminars")
     public String courseBulgariaPage(Model model) {
         model.addAttribute("courses",courseService.find("Seminar"))
-                .addAttribute("title","Семинари");
+                .addAttribute("title","Семинари")
+                .addAttribute("cover","https://res.cloudinary.com/dzqj0bike/image/upload/v1652195904/btu-guides/coursesSelectPage/seminar/pexels-pixabay-159213_cikzco.jpg");
         return "courses-page";
     }
     @GetMapping("/courses/course")
     public String coursesPage(Model model) {
         model.addAttribute("courses",courseService.find("Course"))
-                .addAttribute("title","Курсове");
+                .addAttribute("title","Курсове")
+                .addAttribute("cover","https://res.cloudinary.com/dzqj0bike/image/upload/v1652195885/btu-guides/coursesSelectPage/Courses/pexels-pixabay-256395_noqdco.jpg");
         return "courses-page";
     }
 
     @GetMapping("/courses/training")
     public String coursesTrainingPage(Model model) {
         model.addAttribute("courses",courseService.find("Training"))
-                .addAttribute("title","Обучения");
+                .addAttribute("title","Обучения")
+                .addAttribute("cover","https://res.cloudinary.com/dzqj0bike/image/upload/v1652195973/btu-guides/coursesSelectPage/training/pexels-valentin-monov-6658672_1_cwmfct.jpg");
         return "courses-page";
     }
 
@@ -96,14 +99,18 @@ public class HomeController {
     @GetMapping("/offers/bulgaria")
     public String offersBulgariaPage(Model model) {
         model.addAttribute("trips",tripService.find("Bulgaria"))
-                .addAttribute("translate",translateService.find());
+                .addAttribute("translate",translateService.find())
+                .addAttribute("title","България")
+                .addAttribute("background","https://res.cloudinary.com/dzqj0bike/image/upload/v1652194541/btu-guides/tripSelectPage/BulgarianTrips/pexels-valentin-monov-6658672_i8ngez.jpg");
         return "translate-offers-page";
     }
 
     @GetMapping("/offers/internationally")
     public String offersInternationallyPage(Model model) {
         model.addAttribute("trips",tripService.find("Intr"))
-                .addAttribute("translate",translateService.find());
+                .addAttribute("translate",translateService.find())
+                .addAttribute("title","Чужбина")
+                .addAttribute("background","https://res.cloudinary.com/dzqj0bike/image/upload/v1652194425/btu-guides/tripSelectPage/internationallyTrips/pexels-pixabay-161853_e4ruzi.jpg");
         return "translate-offers-page";
     }
 

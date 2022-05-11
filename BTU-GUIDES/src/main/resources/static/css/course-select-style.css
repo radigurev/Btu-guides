@@ -14,7 +14,7 @@ body {
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: rgb(59, 59, 59);
+    background-color: #dbe9f4;
 }
 .card__button {
     display: inline-block;
@@ -61,7 +61,7 @@ header::before {
     right: 0;
     bottom: 0;
     display: block;
-    background: url('https://www.komar.de/en/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/s/h/sh041-vd4_into_the_jungle_web.jpg');
+    background: url('https://res.cloudinary.com/dzqj0bike/image/upload/v1652192273/btu-guides/coursesSelectPage/pexels-pavel-danilyuk-8761313_ux9uqp.jpg');
     background-size: cover;
     transform-origin: center center 0;
     transform: translateZ(-1px) scale(2);
@@ -76,7 +76,7 @@ header::before {
     top: 100vh;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(59, 59, 59);
+    background-color: #dbe9f4;
     line-height: 30px;
     color: grey;
 }
@@ -88,15 +88,16 @@ header::before {
     height: 14rem;
     border-radius: 15px;
     width: 55%;
-    margin: 3% auto;
+    margin: 1% auto;
     font-weight: bold;
+    font-size: 20px;
 }
 
 .cards {
     width:110vw;
-    background-color: rgb(110, 110, 110);
+    background-color: #c8e3fd;
     display: grid;
-    grid-gap: 1rem;
+    /*grid-gap: 1rem;*/
     position: absolute;
     top: 1000px;
     left: 50%;
@@ -104,6 +105,12 @@ header::before {
     transition: all 0.5s ease;
     text-align: justify;
     font-size: 15px;
+}
+
+@Media (max-width: 1200px) {
+    .grid {
+        font-size: 16px;
+    }
 }
 
 @Media (min-width: 970px) {
