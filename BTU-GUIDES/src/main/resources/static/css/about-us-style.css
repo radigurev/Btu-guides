@@ -92,12 +92,11 @@ header::before {
 }
 
 .image {
-    top: 85px;
-    left: 8%;
-    position: relative;
-    float: left;
-    height: 700px;
-    width: 35%;
+    position: absolute;
+    top: 80px;
+    left: 54%;
+    width: 45%;
+    height: 50%;
 }
 
 .grid {
@@ -120,8 +119,7 @@ header::before {
     top: 1400px;
     left: 50%;
     transform: translate(-50%,-50%);
-    transition: all 0.5s ease;
-    text-align: justify; 
+    text-align: justify;
   }
 
   .history {
@@ -183,58 +181,44 @@ header::before {
         font-size: 10px;
       }
     }
-  
-   @media (max-width:800px) {
 
-       .goals {
-           top: 1600px;
-       }
-    .left {
-        font-size: 25px;
-        top: 780px;
-        width: 85vw;
-    }
-    .image {
-        width: 85vw;
-        margin-top: -450px;
-        left: 0;
-        height: 600px;
-    }
-
-    .cards {
-        top: 2300px;
-       font-size: 13px;
-    }
-    .grid {
-        width: 70%;
-        margin-left: 50%;
-        margin-top: 120px;
-        transform: translate(-50%,-50%);
-    }
-
-    .partners {
-        top: 3150px;
-    }
-
-    .links {
-        top: 3400px;
-    }
-  
-   }
-
-
-   @media (max-width:800px) {
-       .image {
-           top: 300px;
-           left: 50%;
-           transform: translate(-50%,-50%);
-       }
+   @media (max-width:1000px) {
 
        .left {
            left: 50%;
            padding-left: 0;
-           top: 1100px;
+           top: 900px;
+           width: 100%;
            transform: translate(-50%,-50%);
+       }
+
+       .image {
+           width: 100vw;
+           left: 0;
+       }
+
+       .goals {
+           top: 1600px;
+       }
+
+
+       .cards {
+           top: 2300px;
+           font-size: 13px;
+       }
+       .grid {
+           width: 70%;
+           margin-left: 50%;
+           margin-top: 120px;
+           transform: translate(-50%,-50%);
+       }
+
+       .partners {
+           top: 3150px;
+       }
+
+       .links {
+           top: 3400px;
        }
 
    }
@@ -243,9 +227,6 @@ header::before {
        .left {
            font-size: 20px;
        }
-       .image {
-           top: 380px;
-       }
       
    }
 
@@ -253,8 +234,5 @@ header::before {
        .left {
            width: 80vw;
            font-size: 15px;
-       }
-       .image {
-           width: 80vw;
        }
    }
