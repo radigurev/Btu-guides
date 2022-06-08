@@ -3,6 +3,16 @@ package btuguides.web;
 import btuguides.models.binding.ContactBindingModel;
 import btuguides.models.view.ReCaptchaResponse;
 import btuguides.service.*;
+//
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+//
 import org.springframework.http.HttpMethod;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -71,20 +81,23 @@ public class HomeController {
     @GetMapping("/courses/seminars")
     public String courseBulgariaPage(Model model) {
         model.addAttribute("courses",courseService.find("Seminar"))
-                .addAttribute("title","Семинари");
+                .addAttribute("title","Семинари")
+                .addAttribute("cover","https://res.cloudinary.com/dzqj0bike/image/upload/v1652195904/btu-guides/coursesSelectPage/seminar/pexels-pixabay-159213_cikzco.jpg");
         return "courses-page";
     }
     @GetMapping("/courses/course")
     public String coursesPage(Model model) {
         model.addAttribute("courses",courseService.find("Course"))
-                .addAttribute("title","Курсове");
+                .addAttribute("title","Курсове")
+                .addAttribute("cover","https://res.cloudinary.com/dzqj0bike/image/upload/v1652195885/btu-guides/coursesSelectPage/Courses/pexels-pixabay-256395_noqdco.jpg");
         return "courses-page";
     }
 
     @GetMapping("/courses/training")
     public String coursesTrainingPage(Model model) {
         model.addAttribute("courses",courseService.find("Training"))
-                .addAttribute("title","Обучения");
+                .addAttribute("title","Обучения")
+                .addAttribute("cover","https://res.cloudinary.com/dzqj0bike/image/upload/v1652195973/btu-guides/coursesSelectPage/training/pexels-valentin-monov-6658672_1_cwmfct.jpg");
         return "courses-page";
     }
 
@@ -96,14 +109,18 @@ public class HomeController {
     @GetMapping("/offers/bulgaria")
     public String offersBulgariaPage(Model model) {
         model.addAttribute("trips",tripService.find("Bulgaria"))
-                .addAttribute("translate",translateService.find());
+                .addAttribute("translate",translateService.find())
+                .addAttribute("title","България")
+                .addAttribute("background","https://res.cloudinary.com/dzqj0bike/image/upload/v1652194541/btu-guides/tripSelectPage/BulgarianTrips/pexels-valentin-monov-6658672_i8ngez.jpg");
         return "translate-offers-page";
     }
 
     @GetMapping("/offers/internationally")
     public String offersInternationallyPage(Model model) {
         model.addAttribute("trips",tripService.find("Intr"))
-                .addAttribute("translate",translateService.find());
+                .addAttribute("translate",translateService.find())
+                .addAttribute("title","Чужбина")
+                .addAttribute("background","https://res.cloudinary.com/dzqj0bike/image/upload/v1652194425/btu-guides/tripSelectPage/internationallyTrips/pexels-pixabay-161853_e4ruzi.jpg");
         return "translate-offers-page";
     }
 
@@ -116,14 +133,38 @@ public class HomeController {
 
         if (reCaptchaResponse != null && reCaptchaResponse.isSuccess()) {
             message="Запитването е успешно изпратено";
-            SimpleMailMessage msg=new SimpleMailMessage();
-            msg.setTo("radi.gurev@gmail.com");
-            msg.setSubject(String.format("Съобщение от %s",contactBindingModel.getName()));
-            StringBuilder sb=new StringBuilder();
-            sb.append(String.format("Email: %s",contactBindingModel.getEmail())).append(System.lineSeparator()).append(contactBindingModel.getText());
-            msg.setText(sb.toString());
 
-            javaMailSender.send(msg);
+            String to = "radi.gurev@gmail.com";
+            String from = "radigurev.csgo@gmail.com";
+            String host = "smtp.gmail.com";
+            Properties properties = System.getProperties();
+            properties.put("mail.smtp.host", host);
+            properties.put("mail.smtp.port", "465");
+            properties.put("mail.smtp.ssl.enable", "true");
+            properties.put("mail.smtp.auth", "true");
+            Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+
+                protected PasswordAuthentication getPasswordAuthentication() {
+
+                    return new PasswordAuthentication("radigurev.csgo@gmail.com", "Bansko69");
+
+                }
+
+            });
+            session.setDebug(true);
+
+            try {
+                MimeMessage message = new MimeMessage(session);
+                message.setFrom(new InternetAddress(from));
+                message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+                message.setSubject("This is the Subject Line!");
+                message.setText("This is actual message");
+                System.out.println("sending...");
+                Transport.send(message);
+                System.out.println("Sent message successfully....");
+            } catch (MessagingException mex) {
+                mex.printStackTrace();
+            }
             return "redirect:/#contact";
         }
 

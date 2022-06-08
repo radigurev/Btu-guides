@@ -13,7 +13,7 @@ body {
     transform-style: preserve-3d;
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: rgb(126, 123, 123);
+    background-color: #dbe9f4;
   }
 
 header {
@@ -48,7 +48,7 @@ header::before {
     right: 0;
     bottom: 0;
     display: block;
-    background: url('https://www.komar.de/en/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/s/h/sh041-vd4_into_the_jungle_web.jpg');
+    /*background: url('https://www.komar.de/en/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/s/h/sh041-vd4_into_the_jungle_web.jpg');*/
     background-size: cover;
     transform-origin: center center 0;
     transform: translateZ(-1px) scale(2);
@@ -61,8 +61,8 @@ header::before {
     position: absolute;
     top: 100vh;
     width: 100vw;
-    height: 120vh;
-    background-color: rgb(126, 123, 123);
+    height: 100vh;
+    background-color: #dbe9f4;
     line-height: 30px;
     font-weight: lighter;
     color: grey;
@@ -105,7 +105,9 @@ img{
 .hidden {
   display: none;
 }
-
+a {
+    text-decoration: none;
+}
 .animatedImg {
   transform-origin: top;
   transition: all 0.3s ease;

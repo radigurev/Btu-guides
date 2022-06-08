@@ -1,6 +1,6 @@
 
 nav{
-  background: #00d7ff;
+  background: #84e1f3;
     height: 80px;
     width: 100%;
     position: fixed;
@@ -13,6 +13,11 @@ nav{
     padding: 0 100px;
     font-weight: bold;
   }
+label.logo img {
+  width: 90px;
+  height: 90%;
+  margin: 5px;
+}
   nav ul{
     float: right;
     padding: 0;
@@ -33,11 +38,12 @@ nav{
     text-transform: uppercase;
   }
 nav ul li a.active,nav ul li a:hover{
-  background-color: #13b2d5;
+  background-color: #75bcff;
   transition: .5s;
   border-radius: 10px;
 
 }
+
   .checkbtn{
     font-size: 30px;
     color: white;

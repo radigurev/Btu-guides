@@ -7,18 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Вкарване на курсове</h1>
-
+<a href="/admin/edit/site/97979f2c-aa80-11ec-b909-0242ac120002">Връщане</a>
 <form th:action="@{/admin/edit/site/97979f2c-aa80-11ec-b909-0242ac120002/partners}" th:method="POST" th:object="${partnersBindingModel}">
-    <button type="submit">Потвърди</button>
     <div>
         <input th:field="*{name}" type="text" placeholder="Име">
         <input th:field="*{url}" type="text" placeholder="линк">
+        <input th:field="*{companyUrl}" type="text" placeholder="Линк за снимка">
         <select th:field="*{type}" name="" id="">
             <option value="partner">Партньор</option>
             <option value="bigPartner">Голям партньор</option>
         </select>
-        <input th:field="*{companyUrl}" type="text" placeholder="Линк за снимка">
+        <br><br><br><br>
+        <button type="submit">Потвърди</button>
     </div>
 
 </form>

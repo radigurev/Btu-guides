@@ -12,7 +12,7 @@
         <nav th:replace="fragments/nav::nav">
 
           </nav>
-        <header>
+        <header th:style="|background: url(${cover})no-repeat center center fixed;|">
             <h1 th:text="${title}">Курсове и обучения</h1>
         </header>
             <div class="container">
@@ -39,7 +39,4 @@
                         <script src="/js/courses-slider.js"></script>
         </div>
     </body>
-    <div id="footer">This is a footer.
-        This stays at the bottom of the page.
-    </div>
 </html>

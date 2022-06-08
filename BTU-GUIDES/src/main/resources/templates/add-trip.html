@@ -9,11 +9,12 @@
 <body>
 <form th:action="@{/admin/edit/site/97979f2c-aa80-11ec-b909-0242ac120002/trips}" th:method="POST"
       th:object="${tripBindingModel}">
-    <button type="submit">Потвърди</button>
+    <a href="/admin/edit/site/97979f2c-aa80-11ec-b909-0242ac120002">Връщане</a>
     <div>
         <input th:field="*{title}" type="text" placeholder="Заглавие">
         <input th:field="*{imageUrl}" type="text" placeholder="линк за снимка на картата">
         <input th:field="*{description}" type="text" placeholder="кратко пояснение">
+        <input th:field="*{pdfUrl}" type="text" placeholder="Линк за pdf">
         <select th:field="*{type}" name="" id="a">
             <option value="Bulgaria">България</option>
             <option value="Intr">Чужбина</option>
@@ -22,6 +23,9 @@
             <option value="">Options</option>
             <option th:each="w : ${workers}" th:value="${w}" th:text="${w}">Options</option>
         </select>
+        <br><br>
+        <button type="submit">Потвърди</button>
+
     </div>
 </form>
 </body>

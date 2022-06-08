@@ -5,6 +5,7 @@ public class TripBindingModel {
     private String imageUrl;
     private String description;
     private String type;
+    private String pdfUrl;
     private String worker;
 
     public String getTitle() {
@@ -37,6 +38,14 @@ public class TripBindingModel {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getPdfUrl() {
+        return pdfUrl;
+    }
+
+    public void setPdfUrl(String pdfUrl) {
+        this.pdfUrl = pdfUrl;
     }
 
     public String getWorker() {

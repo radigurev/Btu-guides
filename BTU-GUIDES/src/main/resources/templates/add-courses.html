@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="/css/admin-style.css">
 </head>
 <body>
-    <h1>Вкарване на курсове</h1>
+    <a href="/admin/edit/site/97979f2c-aa80-11ec-b909-0242ac120002">Връщане</a>
        <form th:action="@{/admin/edit/site/97979f2c-aa80-11ec-b909-0242ac120002/courses}" th:method="POST" th:object="${coursesBindingModel}">
-        <button type="submit">Потвърди</button>
         <div>
             <input th:field="*{name}" type="text" placeholder="Име на курса">
             <input th:field="*{description}" type="text" placeholder="Кратко пояснение">
             <input th:field="*{url}" type="text" placeholder="Линк за снимка">
+            <input th:field="*{worker}" type="text" placeholder="Име на преподавател">
+            <input th:field="*{workerUrl}" type="text" name="" id="link" placeholder="Линк за профил(Само ако е извън кооперацията)">
             <select th:field="*{isHere}" name="" id="asd">
                 <option value="Company">БТС-Екскурзоводи</option>
                 <option value="Other">Друг</option>
@@ -23,11 +24,9 @@
                 <option value="Seminar">Семинар</option>
                 <option value="Training">Обучение</option>
             </select>
-            <input th:field="*{worker}" type="text" placeholder="Име на преподавател">
-            <input th:field="*{workerUrl}" type="text" name="" id="link" placeholder="Линк за профил(Само ако е извън кооперацията)">
-
+            <br><br>
+            <button type="submit">Потвърди</button>
         </div>
-
        </form>
 </body>
 </html>

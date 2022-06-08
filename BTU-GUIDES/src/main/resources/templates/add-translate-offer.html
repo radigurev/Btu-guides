@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="/css/admin-style.css">
 </head>
 <body>
+<a href="/admin/edit/site/97979f2c-aa80-11ec-b909-0242ac120002">Връщане</a>
+
 <form th:action="@{/admin/edit/site/97979f2c-aa80-11ec-b909-0242ac120002/translate/offers}" th:method="POST" th:object="${translateBindingModel}">
-    <button type="submit">Потвърди</button>
     <div>
         <input th:field="*{title}" type="text" placeholder="Държава">
         <input th:field="*{description}" type="text" placeholder="Кратко пояснение">
         <input th:field="*{url}" type="text" placeholder="Линк за снимка">
+        <button type="submit">Потвърди</button>
+
     </div>
 </form>
 </body>

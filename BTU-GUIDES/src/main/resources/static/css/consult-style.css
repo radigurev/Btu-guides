@@ -9,7 +9,7 @@ html {
 
 body {
     color: #fff;
-    background-color: rgb(126, 123, 123);
+    background-color: #dbe9f4;
     margin: 0;
     padding: 0;
     perspective: 1px;
@@ -52,7 +52,7 @@ header::before {
     right: 0;
     bottom: 0;
     display: block;
-    background: url('https://www.komar.de/en/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/s/h/sh041-vd4_into_the_jungle_web.jpg');
+    background: url('https://res.cloudinary.com/dzqj0bike/image/upload/v1652196413/btu-guides/pexels-mentatdgt-1311518_bb43rh.jpg');
     background-size: cover;
     transform-origin: center center 0;
     transform: translateZ(-1px) scale(2);
@@ -66,10 +66,9 @@ header::before {
     top: 100vh;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(126, 123, 123);
+    background-color: #dbe9f4;
     line-height: 30px;
     font-weight: lighter;
-    padding: 40px;
     color: grey;
 }
 
@@ -78,44 +77,36 @@ header::before {
     color: white;
     padding: 2rem;
     height: 9.5rem;
+    width: 25rem;
     border-radius: 15px;
     text-align: justify;
     font-weight: bold;
+    font-size: 20px;
   }
 
 .cards {
-    position: relative;
-    top: 50px;
-    left: -2.5%;
-    max-width: 95vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 100vw;
     margin: 0 auto;
     display: grid;
     grid-gap: 2.5rem;
     grid-template-columns: repeat(4, 1fr);
-    margin: 3% auto;
   }
 
    
   @media (max-width: 1750px) {
     .cards { grid-template-columns: repeat(2, 1fr);
         max-width: 70vw;
-        left: -4%;
     }
 
   }
 
   @media (max-width: 1170px) {
     .cards { grid-template-columns: repeat(1, 1fr);
-    left: -5%;}
-  }
-
-  @media (max-width: 580px) {
-      .card {
-          font-size: 13px;
-      }
-      .cards {
-          left: -10%;
-      }
+   }
   }
 
   footer {

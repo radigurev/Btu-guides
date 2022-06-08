@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    background-color: rgb(61, 61, 61);
+    background-color: #dbe9f4;
     color: #fff;
     margin: 0;
     padding: 0;
@@ -52,7 +52,7 @@ header::before {
     right: 0;
     bottom: 0;
     display: block;
-    background: url('https://www.komar.de/en/media/catalog/product/cache/5/image/9df78eab33525d08d6e5fb8d27136e95/s/h/sh041-vd4_into_the_jungle_web.jpg');
+    background: url('https://res.cloudinary.com/dzqj0bike/image/upload/v1652197940/btu-guides/pexels-fauxels-3183186_la1p7f.jpg');
     background-size: cover;
     transform-origin: center center 0;
     transform: translateZ(-1px) scale(2);
@@ -66,7 +66,7 @@ header::before {
     top: 100vh;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(126, 123, 123);
+    background-color: #dbe9f4;
     line-height: 30px;
     font-weight: lighter;
     color: grey;
@@ -84,7 +84,6 @@ header::before {
     top: 80px;
     position: relative;
     float: left;
-    color: #fff;
     width: 50%;
     text-align: justify;
     font-weight: bold;
@@ -101,6 +100,11 @@ header::before {
     width: 35%;
 }
 
+.responsive-iframe {
+    width: 100%;
+    height: 100%;
+}
+
 .grid {
     background-color: #e0943c;
     color: white;
@@ -114,7 +118,7 @@ header::before {
   
   .cards {
     width:110vw;
-    background-color: rgb(110, 110, 110);
+      background-color: #c8e3fd;
     display: grid;
     grid-gap: 2rem;
     position: absolute;
@@ -126,7 +130,7 @@ header::before {
   }
 
   .history {
-    color: #fff;
+
     font-weight: bold;
     position: absolute;
     left: 50%;
@@ -134,7 +138,6 @@ header::before {
 }
 
     .goals {
-        color: #fff;
         font-weight: bold;
         position: absolute;
         left: 50%;
@@ -147,7 +150,6 @@ header::before {
     top: 1750px;
     left: 50%;
     transform: translate(-50%,-50%);
-    color: #fff;
 }
 
 .links {
@@ -163,7 +165,7 @@ header::before {
     margin-bottom: 15px;
     display: block;
     font-size: 30px;
-    color: #fff;
+    color: gray;
 }
 
 
@@ -178,6 +180,7 @@ header::before {
       }
       .left {
           font-size: 20px;
+          padding: 0;
       }
     }
   
@@ -195,13 +198,13 @@ header::before {
     .left {
         font-size: 25px;
         top: 780px;
-        width: 85vw;
+        width: 100vw;
     }
     .image {
-        width: 85vw;
-        margin-top: -450px;
+        width: 100vw;
+        margin-top: -350px;
         left: 0;
-        height: 600px;
+        height: 350px;
     }
 
     .cards {
@@ -223,41 +226,4 @@ header::before {
         top: 3400px;
     }
   
-   }
-
-
-   @media (max-width:800px) {
-       .image {
-           top: 300px;
-           left: 50%;
-           transform: translate(-50%,-50%);
-       }
-
-       .left {
-           left: 50%;
-           padding-left: 0;
-           top: 1100px;
-           transform: translate(-50%,-50%);
-       }
-
-   }
-
-   @media (max-width:700px){
-       .left {
-           font-size: 20px;
-       }
-       .image {
-           top: 380px;
-       }
-      
-   }
-
-   @media (max-width:600px) {
-       .left {
-           width: 80vw;
-           font-size: 15px;
-       }
-       .image {
-           width: 80vw;
-       }
    }
