@@ -1,5 +1,6 @@
 package btuguides.models.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -30,6 +31,7 @@ public class Workers extends BaseEntity{
         this.lastName = lastName;
     }
 
+    @Column(columnDefinition = "TEXT")
     public String getUrl() {
         return url;
     }
