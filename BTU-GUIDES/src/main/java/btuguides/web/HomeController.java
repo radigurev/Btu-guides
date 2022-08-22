@@ -115,7 +115,7 @@ public class HomeController {
         return "translate-offers-page";
     }
 
-    @GetMapping("/offers/internationally")
+    @GetMapping("/offers/international")
     public String offersInternationallyPage(Model model) {
         model.addAttribute("trips",tripService.find("Intr"))
                 .addAttribute("translate",translateService.find())

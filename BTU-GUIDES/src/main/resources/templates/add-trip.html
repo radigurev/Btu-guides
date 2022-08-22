@@ -20,7 +20,7 @@
             <option value="Intr">Чужбина</option>
         </select>
         <select th:field="*{worker}" name="" id="">
-            <option value="">Options</option>
+            <option value="">Избери член-кооператор</option>
             <option th:each="w : ${workers}" th:value="${w}" th:text="${w}">Options</option>
         </select>
         <br><br>
