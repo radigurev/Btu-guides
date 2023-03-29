@@ -23,13 +23,8 @@ public class WorkersService implements WorkerService {
     }
 
     @Override
-    public List<String> findAll() {
-        List<String> list=new ArrayList<>();
-        workerRepository.findAll().forEach(workers -> {
-            list.add(String.format("%s %s",workers.getFirstName(),workers.getLastName()));
-        });
-
-        return list;
+    public List<Workers> findAll() {
+        return workerRepository.findAll();
     }
 
     @Override
@@ -66,5 +61,10 @@ public class WorkersService implements WorkerService {
     @Override
     public Object find() {
         return workerRepository.findAll();
+    }
+
+    @Override
+    public Workers findById(String worker) {
+        return this.workerRepository.findById(worker).orElse(null);
     }
 }

@@ -6,6 +6,10 @@ nav{
     position: fixed;
     z-index: 4;
   }
+.nav-btn {
+  color: #131644;
+  font-weight: 700;
+}
   label.logo{
     color: white;
     font-size: 35px;

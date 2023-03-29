@@ -7,6 +7,11 @@ body {
   line-height: 1.6;
   overflow: hidden;
 }
+.nav-btn {
+  color: #131644;
+  font-weight: 700;
+
+}
 nav{
   background: #84e1f3;
     height: 80px;

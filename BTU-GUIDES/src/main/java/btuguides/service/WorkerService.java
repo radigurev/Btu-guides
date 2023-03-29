@@ -6,7 +6,7 @@ import btuguides.models.entity.Workers;
 import java.util.List;
 
 public interface WorkerService {
-    List<String> findAll();
+    List<Workers> findAll();
 
     void save(WorkerBindingModel workerBindingModel);
 
@@ -17,4 +17,6 @@ public interface WorkerService {
     Object findAllViews();
 
     Object find();
+
+    Workers findById(String worker);
 }

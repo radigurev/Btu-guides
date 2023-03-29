@@ -18,10 +18,11 @@
         <select th:field="*{type}" name="" id="a">
             <option value="Bulgaria">България</option>
             <option value="Intr">Чужбина</option>
+            <option value="Tour">Екскурзоводска услуга</option>
         </select>
         <select th:field="*{worker}" name="" id="">
             <option value="">Избери член-кооператор</option>
-            <option th:each="w : ${workers}" th:value="${w}" th:text="${w}">Options</option>
+            <option th:each="w : ${workers}" th:value="${w.id}" th:text="|${w.firstName} ${w.lastName}|">Options</option>
         </select>
         <br><br>
         <button type="submit">Потвърди</button>

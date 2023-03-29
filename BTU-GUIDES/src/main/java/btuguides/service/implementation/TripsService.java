@@ -28,8 +28,7 @@ public class TripsService implements TripService {
     public void save(TripBindingModel tripBindingModel) {
         System.out.println();
         Trips trip=modelMapper.map(tripBindingModel,Trips.class);
-        String[] names=tripBindingModel.getWorker().split(" ");
-        trip.setWorker(workerService.findByNames(names[0],names[1]));
+        trip.setWorker(workerService.findById(tripBindingModel.getWorker()));
         tripRepository.save(trip);
     }
 

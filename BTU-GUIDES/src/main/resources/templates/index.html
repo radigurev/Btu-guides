@@ -15,6 +15,7 @@
 
         </nav>
         <section id="home">
+          <h1 id="nameBtu2">ТУРИСТИЧЕСКА АГЕНЦИЯ „КООПТУР”</h1>
           <h1 id="nameBtu">КООПЕРАЦИЯ БТС-ЕКСКУРЗОВОДИ</h1>
           <a id="homeBtn" href="/about">ПОВЕЧЕ ЗА НАС</a>
         </section>
@@ -87,13 +88,13 @@
       </section>
       <footer class="footer">
         <div class="left-footer">
-            <p>Phone: +359 89 860 7958, +359 88 851 1539</p>
+            <p>Phone: +359 89 860 7958; +359 88 851 1539</p>
         </div>
         <div class="center-footer">
             <p>&copy; 2022 INFOTOUR SYSTEMS LTD</p>
         </div>
         <div class="right-footer">
-            <p>Email: office@btu-guildes.org</p>
+            <p>Email: coop@btu-guides.org</p>
         </div>
     </footer>
     </body>
@@ -102,6 +103,7 @@
         var language = {
             en: {
                 comName:"BTU-GUIDES",
+                comName2:'Tourist Agencty "KOOPTUR"',
                 contact:"Contact",
                 homeButton: "About us",
                 ourPeople: "OUR COOPERATIVE MEMBERS",
@@ -119,6 +121,7 @@
             },
             bg: {
                 comName:"КООПЕРАЦИЯ БТС-ЕКСКУРЗОВОДИ",
+                comName2:"ТУРИСТИЧЕСКА АГЕНЦИЯ „КООПТУР”",
                 contact:"Контакт",
                 homeButton: "Повече за нас",
                 ourPeople: "НАШИТЕ ЧЛЕН-КООПЕРАТОРИ",
@@ -138,6 +141,7 @@
         function changeLanguage() {
                     if(nameBtu.textContent==='КООПЕРАЦИЯ БТС-ЕКСКУРЗОВОДИ') {
                         nameBtu.textContent=language.en.comName;
+                        nameBtu2.textContent = language.en.comName2;
                         contactNav.textContent=language.en.contact;
                         homeBtn.textContent=language.en.homeButton;
                         ourPeople.textContent=language.en.ourPeople;
@@ -157,6 +161,7 @@
                     }else {
                         nameBtu.textContent=language.bg.comName;
                         contactNav.textContent=language.bg.contact;
+                        nameBtu2.textContent=language.bg.comName2;
                         homeBtn.textContent=language.bg.homeButton;
                         ourPeople.textContent=language.bg.ourPeople;
                         ourPeopleBtn.textContent=language.bg.ourPeopleBtn;

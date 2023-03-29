@@ -114,7 +114,14 @@ public class HomeController {
                 .addAttribute("background","https://res.cloudinary.com/dzqj0bike/image/upload/v1652194541/btu-guides/tripSelectPage/BulgarianTrips/pexels-valentin-monov-6658672_i8ngez.jpg");
         return "translate-offers-page";
     }
-
+    @GetMapping("/offers/tours")
+    public String offersToursPage(Model model) {
+        model.addAttribute("trips",tripService.find("Tour"))
+                .addAttribute("translate",translateService.find())
+                .addAttribute("title","България")
+                .addAttribute("background","https://res.cloudinary.com/dzqj0bike/image/upload/v1652194541/btu-guides/tripSelectPage/BulgarianTrips/pexels-valentin-monov-6658672_i8ngez.jpg");
+        return "translate-offers-page";
+    }
     @GetMapping("/offers/international")
     public String offersInternationallyPage(Model model) {
         model.addAttribute("trips",tripService.find("Intr"))
@@ -134,9 +141,9 @@ public class HomeController {
         if (reCaptchaResponse != null && reCaptchaResponse.isSuccess()) {
             message="Запитването е успешно изпратено";
 
-            String to = "radi.gurev@gmail.com";
-            String from = "radigurev.csgo@gmail.com";
-            String host = "smtp.gmail.com";
+            String to = "coop@btu-guides.org";
+            String from = "coop@btu-guides.org";
+            String host = "mail.btu-guides.org";
             Properties properties = System.getProperties();
             properties.put("mail.smtp.host", host);
             properties.put("mail.smtp.port", "465");
@@ -146,7 +153,7 @@ public class HomeController {
 
                 protected PasswordAuthentication getPasswordAuthentication() {
 
-                    return new PasswordAuthentication("radigurev.csgo@gmail.com", "Bansko69");
+                    return new PasswordAuthentication("coop@btu-guides.org", "");
 
                 }
 
@@ -157,9 +164,8 @@ public class HomeController {
                 MimeMessage message = new MimeMessage(session);
                 message.setFrom(new InternetAddress(from));
                 message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-                message.setSubject("This is the Subject Line!");
-                message.setText("This is actual message");
-                System.out.println("sending...");
+                message.setSubject("Ново съобщение");
+                message.setText(String.format("Email:%s%n Име:%s %n Съобщение:%n %s",contactBindingModel.getEmail(),contactBindingModel.getName(),contactBindingModel.getText()));
                 Transport.send(message);
                 System.out.println("Sent message successfully....");
             } catch (MessagingException mex) {

@@ -82,31 +82,41 @@ header::before {
 }
 
 .grid {
-    background-color: #e0943c;
-    color: white;
-    padding: 1rem;
-    height: 14rem;
+    /*background-color: #e0943c;*/
+    color: #131644;
     border-radius: 15px;
-    width: 55%;
-    margin: 1% auto;
-    font-weight: bold;
-    font-size: 20px;
+    width: 100%;
+    font-size: 28px;
+    font-weight: 900;
+    float: left;
+    padding: 2%;
 }
 
 .cards {
-    width:110vw;
+    width:100vw;
     background-color: #c8e3fd;
-    display: grid;
-    /*grid-gap: 1rem;*/
+    grid-gap: 2rem;
     position: absolute;
-    top: 1000px;
+    top: 1200px;
     left: 50%;
     transform: translate(-50%,-50%);
     transition: all 0.5s ease;
     text-align: justify;
-    font-size: 15px;
+}
+.fa-check {
+    color: #035403;
+    vertical-align: middle;
 }
 
+.fa-border {
+    border-color: #131644!important;
+}
+
+.float {
+    float: left;
+    margin-right: 40px;
+    margin-top: -5px;
+}
 @Media (max-width: 1200px) {
     .grid {
         font-size: 16px;
