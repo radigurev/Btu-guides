@@ -25,6 +25,15 @@ header {
     text-align: center;
     text-transform: uppercase;
 }
+.contact-btn {
+    border-radius: 15px;
+    border: 0;
+    padding: 8px 15px;
+    background-color: #e0943c;
+    color: #fff;
+    font-size: large;
+    cursor: pointer;
+}
 
 header h1 {
     margin: 0;
@@ -121,7 +130,7 @@ a {
   transform: translate(-50%,-50%);
 }
 .slider-container {
- height: 400px;
+ height: 500px;
  width: 85vw;
  max-width: 1600px;
  position: relative;
@@ -273,6 +282,7 @@ a {
   color: #fff;
   font-size: large;
   transform: translate(-50%,-50%);
+    cursor: pointer;
 }
 
 footer {

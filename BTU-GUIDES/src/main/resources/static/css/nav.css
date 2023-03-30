@@ -22,15 +22,21 @@ label.logo img {
   height: 90%;
   margin: 5px;
 }
+nav ul li {
+   display:inline-block;
+ }
   nav ul{
-    float: right;
-    padding: 0;
-    margin: 0 20px 0 0;
+    text-align: center;
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   nav ul li{
     display: inline-block;
     line-height: 80px;
-    margin: 0 5px;
+    margin-bottom: 20px;
   }
   nav ul li a{
     color: white;
@@ -74,14 +80,15 @@ nav ul li a.active,nav ul li a:hover{
       display: block;
     }
     ul{
-      position: fixed;
-      width: 100%;
-      height: 100vh;
+      position: fixed!important;
+      width: 100% !important;
+      height: 100vh!important;
       background: #2c3e50;
-      top: 80px;
-      left: -100%;
-      text-align: center;
-      transition: all .5s;
+      top: 80px!important;
+      left: -100% !important;
+      text-align: center!important;
+      transition: all .5s!important;
+      transform: translate(0,0)!important;
     }
     nav ul li{
       display: block;
@@ -96,6 +103,6 @@ nav ul li a.active,nav ul li a:hover{
       color: #000;
     }
     #check:checked ~ ul{
-      left: 0;
+      left: 0!important;
     }
   }

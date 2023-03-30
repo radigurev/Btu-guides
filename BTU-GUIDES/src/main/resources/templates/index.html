@@ -65,26 +65,35 @@
               <h2 id="contactUs">Свържете се с нас</h2>
               <form th:action="@{/#contact}" th:method="POST" th:object="${contactBindingModel}">
                 <div class="form-group">
-                  <label id="nameLabel" for="name">Пълно име</label>
-                  <input th:field="*{name}" type="text" name="Name" id="name" placeholder="Име и Фамилия" required minlength="3" maxlength="25" />
+                    <div>
+                        <label id="nameLabel" for="name">Име <span class="required">*</span></label>
+                        <input th:field="*{name}" type="text" name="Name" id="name" placeholder="Име" required minlength="3" maxlength="25" />
+                    </div>
+                    <div>
+                        <label id="middleNameLabel" for="name">Презиме </label>
+                        <input th:field="*{secondName}" type="text" name="Name" id="middleName" placeholder="Презиме" minlength="3" maxlength="25" />
+                    </div>
+                    <div>
+                        <label id="familyNameLabel" for="name">Фамилия <span class="required">*</span></label>
+                        <input th:field="*{familyName}" type="text" name="Name" id="familyName" placeholder="Фамилия" required minlength="3" maxlength="25" />
+                    </div>
                 </div>
                 <div class="form-group">
-                  <label for="email">Email Address</label>
+                  <label for="email">Email <span class="required">*</span></label>
                   <input th:field="*{email}" type="email" name="Email" id="email" placeholder="email@domain.tld" required />
                 </div>
                 <div class="form-group">
-                  <label id="messageLabel" for="message">Съобщение</label>
+                  <label id="messageLabel" for="message">Съобщение <span class="required">*</span></label>
                   <textarea th:field="*{text}" name="Message" id="message" rows="5" placeholder="Напишете вашето съобщение...."></textarea>
                 </div>
                 <div class="form-group">
-                  <button id="submitBtn" type="submit" class="submit"><i class="far fa-paper-plane"></i>Send</button>
+                  <button id="submitBtn" type="submit" class="submit"><i class="far fa-paper-plane"></i>Изпрати</button>
                 </div>
                   <div class="g-recaptcha" data-sitekey="6LcJ3GMfAAAAAGfEaxaWoSXg_5yRsh7lMzDskVwq">
                   </div>
                   <span id="robot-message" th:text="${verification}"></span>
               </form>
             </div>
-        </div>
       </section>
       <footer class="footer">
         <div class="left-footer">

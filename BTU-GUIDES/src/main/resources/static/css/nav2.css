@@ -31,17 +31,20 @@ label.logo img {
   height: 90%;
   margin: 5px;
 }
-  nav ul{
-    margin: 0;
-    padding: 0;
-    float: right;
-  }
-  
+nav ul{
+  text-align: center;
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
   nav ul li{
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
   }
+
   nav ul li a{
     color: white;
     transition: all 0.2s ease-in;
@@ -84,14 +87,15 @@ label.logo img {
       margin-top: 25px;
     }
     ul{
-      position: fixed;
-      width: 100%;
-      height: 100vh;
+      position: fixed!important;
+      width: 100% !important;
+      height: 100vh!important;
       background: #2c3e50;
-      top: 80px;
-      left: -110%;
-      text-align: center;
-      transition: all .5s;
+      top: 80px!important;
+      left: -100% !important;
+      text-align: center!important;
+      transition: all .5s!important;
+      transform: translate(0,0)!important;
     }
     nav ul li{
       display: block;
@@ -106,6 +110,6 @@ label.logo img {
       color: #000;
     }
     #check:checked ~ ul{
-      left: 0;
+      left: 0!important;
     }
   }

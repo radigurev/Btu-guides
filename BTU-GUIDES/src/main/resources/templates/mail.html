@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/index-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="/css/nav3.css">
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="/js/recaptcha.js"></script>
+  <script src="/js/translate.js"></script>
+</head>
+<body>
+<nav th:replace="fragments/nav::nav"></nav>
+<section id="contact">
+<div class="wrapper">
+  <h2 id="contactUs">Свържете се с нас</h2>
+  <form th:action="@{/mail/{id}(id = ${Id})}" th:method="POST" th:object="${contactBindingModel}">
+    <div class="form-group">
+      <div>
+        <label id="nameLabel" for="name">Име <span class="required">*</span></label>
+        <input th:field="*{name}" type="text" name="Name" id="name" placeholder="Име" required minlength="3" maxlength="25" />
+      </div>
+      <div>
+        <label id="middleNameLabel" for="name">Презиме </label>
+        <input th:field="*{secondName}" type="text" name="Name" id="middleName" placeholder="Презиме" minlength="3" maxlength="25" />
+      </div>
+      <div>
+        <label id="familyNameLabel" for="name">Фамилия <span class="required">*</span></label>
+        <input th:field="*{familyName}" type="text" name="Name" id="familyName" placeholder="Фамилия" required minlength="3" maxlength="25" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email <span class="required">*</span></label>
+      <input th:field="*{email}" type="email" name="Email" id="email" placeholder="email@domain.tld" required />
+    </div>
+    <div class="form-group">
+      <label id="messageLabel" for="message">Съобщение <span class="required">*</span></label>
+      <textarea th:field="*{text}" name="Message" id="message" rows="5" placeholder="Напишете вашето съобщение...."></textarea>
+    </div>
+    <div class="form-group">
+      <button id="submitBtn" type="submit" class="submit"><i class="far fa-paper-plane"></i>Изпрати</button>
+    </div>
+    <div class="g-recaptcha" data-sitekey="6LcJ3GMfAAAAAGfEaxaWoSXg_5yRsh7lMzDskVwq">
+    </div>
+    <span id="robot-message" th:text="${message}"></span>
+  </form>
+</div>
+</section>
+</body>
+</html>
+
+<style>
+  .wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+</style>

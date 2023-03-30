@@ -1,66 +1,74 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Туристически услуги</title>
-        <link rel="stylesheet" href="/css/translate-offers-style.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-        <link rel="stylesheet" href="/css/nav.css">
-    </head>
-    <body>
-    <nav th:replace="fragments/nav::nav">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Туристически услуги</title>
+    <link rel="stylesheet" href="/css/translate-offers-style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/nav.css">
+</head>
+<body>
+<nav th:replace="fragments/nav::nav">
 
-    </nav>
-        <header th:style="|background: url(${background}) no-repeat center center fixed;|">
-            <h1 th:text="|Туристически услуги в ${title}|">Туристически услуги</h1>
-        </header>
-        <div class="container">
-          <button type="button" class="change-button" id="change-button" onclick="changeSlider()">Туристически услуги</button>
-                <div id="container">
-                    <div class="slider-container">
-                      <span onclick="slideRight()" class="btn"></span>
-                        <div id="slider">
+</nav>
+<header th:style="|background: url(${background}) no-repeat center center fixed;|">
+    <h1 th:text="|Туристически услуги в ${title}|">Туристически услуги</h1>
+</header>
+<div class="container">
+    <button type="button" class="change-button" id="change-button" onclick="changeSlider()">Туристически услуги</button>
+    <div id="container">
+        <div class="slider-container">
+            <span onclick="slideRight()" class="btn"></span>
+            <div id="slider">
 
-                          <div class="slide" th:each="t : ${trips}"><div class="card">
-                              <figure>
-                            <img th:src="${t.imageUrl}" alt="Hotel" >
+                <div class="slide" th:each="t : ${trips}">
+                    <div class="card">
+                        <figure>
+                            <img th:src="${t.imageUrl}" alt="Hotel">
                         </figure>
                         <div class="card-body">
-                          <a class="card-title" th:href="${t.pdfUrl}" th:text="|${t.title}|">Hotel 1</a>
-                          <p class="card-text" th:text="|${t.description}|"> </p>
-                          <a th:href="@{/translators}" th:text="|${t.worker.firstName} ${t.worker.lastName}|">Има фамилия</a>
+                            <a class="card-title" th:href="${t.pdfUrl}" th:text="|${t.title}|">Hotel 1</a>
+                            <p class="card-text" th:text="|${t.description}|"></p>
+                            <a th:href="@{/translators}" th:text="|${t.worker.firstName} ${t.worker.lastName}|">Има
+                                фамилия</a>
                         </div>
-                  </div></div>
-
-                      </div>
-                      <span onclick="slideLeft()" class="btn"></span>
-                    </div>
-                  </div>
-                    <!-- Second Slider -->
-                  <div class="hidden" id="container2">
-                    <div class="slider-container">
-                      <span onclick="slideRight()" class="btn"></span>
-                      <br>
-                        <div id="slider2">
-
-                  <div class="slide2" th:each="t : ${translate}"><div class="card2">
-                    <figure >
-                            <img class="animatedImg" th:src="${t.url}" alt="Hotel" >
-                        </figure>
-                  
-                        <div class="card-body hidden">
-                          <h5 class="card-title" th:text="${t.title}">Title</h5>
-                          <p class="card-text" th:text="${t.description}">simply dummy text</p>
+                        <div>
+                            <a th:href="@{/mail/{id}(id=${t.id})}" class="contact-btn">Свържете се с нас</a>
                         </div>
-                  </div></div>
-
-                      </div>
-                      <span onclick="slideLeft()" class="btn"></span>
                     </div>
-                  </div>
-                  <script src="/js/offers-page.js"></script>
+                </div>
+
+            </div>
+            <span onclick="slideLeft()" class="btn"></span>
         </div>
-      
-    </body>
+    </div>
+    <!-- Second Slider -->
+    <div class="hidden" id="container2">
+        <div class="slider-container">
+            <span onclick="slideRight()" class="btn"></span>
+            <br>
+            <div id="slider2">
+
+                <div class="slide2" th:each="t : ${translate}">
+                    <div class="card2">
+                        <figure>
+                            <img class="animatedImg" th:src="${t.url}" alt="Hotel">
+                        </figure>
+
+                        <div class="card-body hidden">
+                            <h5 class="card-title" th:text="${t.title}">Title</h5>
+                            <p class="card-text" th:text="${t.description}">simply dummy text</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <span onclick="slideLeft()" class="btn"></span>
+        </div>
+    </div>
+    <script src="/js/offers-page.js"></script>
+</div>
+
+</body>
 </html>
