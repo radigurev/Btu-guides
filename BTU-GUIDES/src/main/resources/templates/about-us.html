@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="/js/slider.js"></script>
+    <script src="/js/LangBool.js"></script>
 </head>
 <body>
 <nav th:replace="fragments/nav::nav">
@@ -22,10 +23,10 @@
     <h1 id="aboutTitle">ЗА НАС</h1>
 </header>
 <div class="container">
-    <h1 class="history">История</h1>
+    <h1 id="historyTitle" class="history">История</h1>
     <div class="wrapper">
         <div class="left">
-                    <span> През 2021 г. бе учредена и регистрирана като юридическо
+                    <span id="historyText"> През 2021 г. бе учредена и регистрирана като юридическо
                         лице първата специализирана кооперация в сферата на
                         туризма – Кооперация „БТС – Екскурзоводи”.
                         Кооперацията е създадена като доброволно сдружение
@@ -46,12 +47,12 @@
         </div>
     </div>
 
-    <h1 class="goals">Цели</h1>
+    <h1 id="goals" class="goals">Цели</h1>
 
     <div class="cards">
         <div class="grid">
             <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-            <div> <span>Осигуряване на качествени екскурзоводски услуги за
+            <div> <span id="check1">Осигуряване на качествени екскурзоводски услуги за
                     удовлетворяване изискванията на клиентите в максимална
                     степен при съблюдаване на икономическите интереси на
                     екскурзоводите и водачите на туристически групи и
@@ -60,7 +61,7 @@
         </div>
         <div class="grid">
             <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-            <div><span> Повишаване на професионалната квалификация,
+            <div><span id="check2"> Повишаване на професионалната квалификация,
             образованието и практическата подготовка, необходими за
             гарантиране на общоприетите стандарти и съвременни
             изисквания за упражняване на професията на екскурзовода и
@@ -69,27 +70,27 @@
         </div>
         <div class="grid">
             <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-            <div><span> Осигуряване и поддържане на актуална информация за
+            <div><span id="check3"> Осигуряване и поддържане на актуална информация за
             туристическите забележителности чрез съвременни,
                 включително дигитални средства.</span></div>
         </div>
         <div class="grid">
             <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-            <div><span>Участие в разработване и утвърждаване на стандарти за
+            <div><span id="check4">Участие в разработване и утвърждаване на стандарти за
                     работа на екскурзоводите и водачите на туристически групи
                 по направления.</span></div></div>
         <div class="grid">
             <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-            <div><span>Предоставяне на качествени туристически услуги – екскурзии, почивки и обучения
+            <div><span id="check5">Предоставяне на качествени туристически услуги – екскурзии, почивки и обучения
                 в България и чужбина, групови и индивидуални.</span></div></div>
         <div class="grid">
             <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-            <div><span>Предоставяне на качествени туристически услуги за осъществяване на
+            <div><span id="check6">Предоставяне на качествени туристически услуги за осъществяване на
                 конферентен туризъм в България и чужбина.</span></div></div>
     </div>
 </div>
 
-<h1 class="partners">Партньори</h1>
+<h1 id="partners" class="partners">Партньори</h1>
 
 <div class="slider-container">
     <section class="customer-logos slider">
@@ -102,7 +103,7 @@
     <a th:each="p : ${partners}" th:text="${p.name}" th:href="@{${p.url}}">Софийски туристически район</a>
     <br>
     <br>
-    <a href="https://drive.google.com/file/d/17AhAlfoRx9Nj9bk7n4hI17hNJwctlQqF/view?usp=sharing">Политика за защита на
+    <a id="link" href="https://drive.google.com/file/d/17AhAlfoRx9Nj9bk7n4hI17hNJwctlQqF/view?usp=sharing">Политика за защита на
         личните данни</a>
 </div>
 
@@ -112,15 +113,69 @@
 <script>
     var language = {
         en: {
-            title: "About us"
+            title: "About us",
+            history: "History",
+            historyText: "BTS Cooperative, the first ever cooperative in the field of tourism, was\n" +
+                "established in 2021.\n" +
+                "The cooperative was created as a voluntary association of individuals,\n" +
+                "carrying out economic and commercial activity\n" +
+                "through joint actions, mutual assistance and cooperation in the sense of\n" +
+                "the commercial law and the law on cooperatives\n" +
+                "\n" +
+                "in force in the Republic of Bulgaria",
+            goals: "Goals",
+            check1:"Delivering high quality travel services, satisfying the requirements of\n" +
+                "our customers to the highest possible degree,\n" +
+                "all the while зидшеъшсдхж the economic interests of the tour guides\n" +
+                "leaders of tourist groups, and\n" +
+                "ensuring the rational use of available material, labor and financial\n" +
+                "resources.",
+            check2: "Improving the professional qualification, education and practical\n" +
+                "training necessary to ensure the generally\n" +
+                "accepted standards and modern requirements for exercising the\n" +
+                "profession of tour guide and guide of tourist groups.",
+            check3: "Participation in the development and approval of standards for the work\n" +
+                "of tour guides and guides\n" +
+                "of tourist groups by direction.",
+            check4: "Providing and keeping up-to-date information about tourist attractions\n" +
+                "through modern, including digital means.",
+            check5: "Providing quality tourist services – excursions, holidays and trainings in\n" +
+                "Bulgaria and abroad,\n" +
+                "both group and individual.",
+            check6: "Provision of quality tourist services for conference tourism in Bulgaria\n" +
+                "and abroad.",
+            partners: "Partners",
+            linkName: "Personal Data Protection Policy",
+            linkHref: ""
         },
         bg: {
             title: "За нас"
         }
     }
 
-    function changeLanguage() {
-        aboutTitle.textContent = language.en.title;
+    function changeLanguage(change = true) {
+        if(change)
+      bgLanguage = !bgLanguage;
+
+        if(bgLanguage) {
+            aboutTitle.textContent = language.bg.title;
+
+        }else {
+            aboutTitle.textContent = language.en.title;
+            historyTitle.textContent = language.en.history;
+            historyText.textContent = language.en.historyText;
+            goals.textContent = language.en.goals;
+            check1.textContent = language.en.check1;
+            check2.textContent = language.en.check2;
+            check3.textContent = language.en.check3;
+            check4.textContent = language.en.check4;
+            check5.textContent = language.en.check5;
+            check6.textContent = language.en.check6;
+            partners.textContent = language.en.partners;
+            link.textContent = language.en.linkName;
+        }
     }
+    changeLanguage(false);
+
 </script>
 </html>

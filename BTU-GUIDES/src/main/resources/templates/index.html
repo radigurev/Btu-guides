@@ -8,6 +8,7 @@
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="/js/recaptcha.js"></script>
         <script src="/js/translate.js"></script>
+        <script src="/js/LangBool.js"></script>
     </head>
 <body>
     <div class="container">
@@ -126,7 +127,10 @@
                 nameLabel: "Full name",
                 namePlaceHolder: "First and Last",
                 messageLabel: "Message",
-                message: "Type your message here...."
+                message: "Type your message here....",
+                aboutUsNav: "about us",
+                cooperativeNav: "cooperative",
+                serviceNav: "service"
             },
             bg: {
                 comName:"КООПЕРАЦИЯ БТС-ЕКСКУРЗОВОДИ",
@@ -144,11 +148,17 @@
                 nameLabel: "Пълно име",
                 namePlaceHolder: "Име и фамилия",
                 messageLabel: "Съобщение",
-                message: "Напишете вашето съобщение...."
+                message: "Напишете вашето съобщение....",
+                aboutUsNav: "ЗА НАС",
+                cooperativeNav: "ЧЛЕНОВЕ",
+                serviceNav: "Услуги"
             }
         }
-        function changeLanguage() {
-                    if(nameBtu.textContent==='КООПЕРАЦИЯ БТС-ЕКСКУРЗОВОДИ') {
+        function changeLanguage(change = true) {
+            if(change)
+            bgLanguage = !bgLanguage;
+
+                    if(!bgLanguage) {
                         nameBtu.textContent=language.en.comName;
                         nameBtu2.textContent = language.en.comName2;
                         contactNav.textContent=language.en.contact;
@@ -164,6 +174,9 @@
                         consultBtn.textContent=language.en.readMoreBtn;
                         contactUs.textContent=language.en.contactUs;
                         nameLabel.textContent=language.en.nameLabel;
+                        aboutUsNav.textContent=language.en.aboutUsNav;
+                        cooperativeNav.textContent=language.en.cooperativeNav;
+                        serviceNav.textContent=language.en.serviceNav;
                         document.getElementById('name').placeholder=language.en.namePlaceHolder;
                         messageLabel.textContent=language.en.messageLabel;
                         document.getElementById('message').placeholder=language.en.message;
@@ -183,10 +196,14 @@
                         consultBtn.textContent=language.bg.readMoreBtn;
                         contactUs.textContent=language.bg.contactUs;
                         nameLabel.textContent=language.bg.nameLabel;
+                        aboutUsNav.textContent=language.bg.aboutUsNav;
+                        cooperativeNav.textContent=language.bg.cooperativeNav;
+                        serviceNav.textContent=language.bg.serviceNav;
                         document.getElementById('name').placeholder=language.bg.namePlaceHolder;
                         messageLabel.textContent=language.bg.messageLabel;
                         document.getElementById('message').placeholder=language.bg.message;
                     }
         }
+        changeLanguage(false);
     </script>
 </html>

@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="/css/translate-offers-style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="/css/nav.css">
+    <script src="/js/LangBool.js"></script>
 </head>
 <body>
 <nav th:replace="fragments/nav::nav">
 
 </nav>
 <header th:style="|background: url(${background}) no-repeat center center fixed;|">
-    <h1 th:text="|Туристически услуги в ${title}|">Туристически услуги</h1>
+    <h1 id="header" th:text="|Туристически услуги в ${title}|">Туристически услуги</h1>
 </header>
 <div class="container">
-    <button type="button" class="change-button" id="change-button" onclick="changeSlider()">Туристически услуги</button>
+    <button type="button" class="change-button" id="changebutton" onclick="changeSlider()">Туристически услуги</button>
     <div id="container">
         <div class="slider-container">
             <span onclick="slideRight()" class="btn"></span>
@@ -68,6 +69,32 @@
         </div>
     </div>
     <script src="/js/offers-page.js"></script>
+    <script>
+        var language = {
+            en: {
+            changeBtn: "Travel Services",
+
+            },
+            bg: {
+
+            }
+        }
+
+        function changeLanguage(change = true) {
+            if(change)
+                bgLanguage = !bgLanguage;
+
+            if(bgLanguage) {
+                aboutTitle.textContent = language.bg.title;
+
+            }else {
+                header.textContent = language.en.changeBtn;
+                changebutton.textContent = language.en.changeBtn;
+            }
+        }
+        changeLanguage(false);
+
+    </script>
 </div>
 
 </body>
