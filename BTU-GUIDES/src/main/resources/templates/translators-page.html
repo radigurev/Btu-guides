@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="/css/nav2.css">
     <link rel="stylesheet" href="/css/translators-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <title>ЧЛЕН-КООПЕРАТОРИ</title>
+    <script src="/js/LangBool.js"></script>
+
 </head>
 <body>
 <nav th:replace="fragments/nav::nav">
 
 </nav>
-    <div class="cards">
+    <div id="bg" class="cards">
         <div class="card" th:each="e : ${translators}">
             <figure>
                 <img class="img" th:src="@{|${e.url}|}" alt="">
@@ -22,5 +23,59 @@
                 <h5 class="language" th:text="${e.languages}">BG, EN, FR</h5>
         </div>
       </div>
+
+<div id="en" class="cards">
+    <div class="card" th:each="e : ${translators}">
+        <figure>
+            <img class="img" th:src="@{|${e.url}|}" alt="">
+        </figure>
+        <h5 class="info" th:text="|Location: ${e.city}|">Location: </h5>
+        <h2 class="name" th:text="|${e.firstNameEN} ${e.lastNameEN}|">Name name</h2>
+        <h5 class="language" th:text="${e.languages}">BG, EN, FR</h5>
+    </div>
+</div>
 </body>
 </html>
+<script>
+    var language = {
+        en: {
+            contact:"Contact",
+            aboutUsNav: "about us",
+            cooperativeNav: "cooperation",
+            serviceNav: "SERVICES",
+        },
+        bg: {
+            aboutUsNav: "ЗА НАС",
+            cooperativeNav: "ЧЛЕНОВЕ",
+            serviceNav: "Услуги",
+            contact:"Контакт",
+        }
+        };
+    function changeLanguage(change = true) {
+        if(change) {
+            setCookie();
+        }
+
+        if(getCookie('language') === 'true') {
+            contactNav.textContent=language.bg.contact;
+            aboutUsNav.textContent=language.bg.aboutUsNav;
+            cooperativeNav.textContent=language.bg.cooperativeNav;
+            serviceNav.textContent=language.bg.serviceNav;
+            let bg = document.getElementById('bg');
+            let en = document.getElementById('en');
+            bg.classList.remove('displayNone');
+            en.classList.add('displayNone');
+        }else {
+            contactNav.textContent=language.en.contact;
+            aboutUsNav.textContent=language.en.aboutUsNav;
+            cooperativeNav.textContent=language.en.cooperativeNav;
+            serviceNav.textContent=language.en.serviceNav;
+
+            let bg = document.getElementById('bg');
+            let en = document.getElementById('en');
+            en.classList.remove('displayNone');
+            bg.classList.add('displayNone');
+        }
+        }
+        changeLanguage(false);
+</script>

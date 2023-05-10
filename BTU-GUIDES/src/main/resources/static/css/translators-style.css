@@ -12,6 +12,10 @@ body {
     border-radius: 15px;
   }
 
+.displayNone {
+    display: none !important;
+}
+
   .cards {
       position: relative;
       top: 100px;

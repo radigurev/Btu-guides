@@ -7,6 +7,9 @@ public class WorkerBindingModel {
     private String city;
     private String languages;
 
+    private String firstNameEN;
+    private String lastNameEN;
+
     public String getFirstName() {
         return firstName;
     }
@@ -45,5 +48,21 @@ public class WorkerBindingModel {
 
     public void setLanguages(String languages) {
         this.languages = languages;
+    }
+
+    public String getFirstNameEN() {
+        return firstNameEN;
+    }
+
+    public void setFirstNameEN(String firstNameEN) {
+        this.firstNameEN = firstNameEN;
+    }
+
+    public String getLastNameEN() {
+        return lastNameEN;
+    }
+
+    public void setLastNameEN(String lastNameEN) {
+        this.lastNameEN = lastNameEN;
     }
 }

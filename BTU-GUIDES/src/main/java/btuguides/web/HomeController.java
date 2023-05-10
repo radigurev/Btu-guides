@@ -170,7 +170,7 @@ public class HomeController {
 
                 protected PasswordAuthentication getPasswordAuthentication() {
 
-                    return new PasswordAuthentication("coop@btu-guides.org", "");
+                    return new PasswordAuthentication("coop@btu-guides.org", "Proekta6669");
 
                 }
 
@@ -224,7 +224,7 @@ public class HomeController {
 
                 protected PasswordAuthentication getPasswordAuthentication() {
 
-                    return new PasswordAuthentication("coop@btu-guides.org", "");
+                    return new PasswordAuthentication("coop@btu-guides.org", "Proekta6669");
 
                 }
 

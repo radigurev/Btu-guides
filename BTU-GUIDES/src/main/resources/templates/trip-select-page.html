@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="/css/nav3.css">
     <link rel="stylesheet" href="/css/trip-select-style.css"/>
     <link rel="stylesheet" href="/css/responsive-cards.css"/>
+    <script src="/js/LangBool.js"></script>
+
 </head>
 <body>
 <nav th:replace="fragments/nav::nav">
 
 </nav>
 <header>
-    <h1>Туристически услуги</h1>
+    <h1 id="Title">Туристически услуги</h1>
 </header>
-
-
 <div class="container">
     <div class="container-cards">
         <div class="card">
@@ -25,9 +25,9 @@
                 <img src="https://res.cloudinary.com/dzqj0bike/image/upload/v1652189847/btu-guides/tripSelectPage/c45e6478c907ec578fb28823603b2a78_komkua.jpg"
                      alt="Picture by Kyle Cottrell" class="card__image">
                 <figcaption class="card__caption">
-                    <h2 class="card__title">Туристически услуги в България</h2>
+                    <h2 id="serviceBulgaria" class="card__title">Туристически услуги в България</h2>
                     <br><br>
-                    <a href="/offers/bulgaria" class="card__button">Вижте повече</a>
+                    <a id="bgBtn" href="/offers/bulgaria" class="card__button">Вижте повече</a>
                 </figcaption>
             </figure>
         </div>
@@ -37,9 +37,9 @@
                 <img src="https://res.cloudinary.com/dzqj0bike/image/upload/v1652190040/btu-guides/tripSelectPage/pexels-mark-neal-2225442_1_ve1hf8.jpg"
                      alt="Picture by Nathan Dumlao" class="card__image">
                 <figcaption class="card__caption">
-                    <h2 class="card__title">Туристически услуги в чужбина</h2>
+                    <h2 id="serviceInternational" class="card__title">Туристически услуги в чужбина</h2>
                     <br><br>
-                    <a href="/offers/international" class="card__button">Вижте повече</a>
+                    <a id="intBtn" href="/offers/international" class="card__button">Вижте повече</a>
                 </figcaption>
             </figure>
         </div>
@@ -48,9 +48,9 @@
                 <img src="https://res.cloudinary.com/dzqj0bike/image/upload/v1680116789/btu-guides/tripSelectPage/map-3578213_960_720_gq6zxn.jpg"
                      alt="Picture by Nathan Dumlao" class="card__image">
                 <figcaption class="card__caption">
-                    <h2 class="card__title">Екскурзоводски услуги</h2>
+                    <h2 id="serviceTour" class="card__title">Екскурзоводски услуги</h2>
                     <br><br>
-                    <a href="/offers/tours" class="card__button">Вижте повече</a>
+                    <a id="trBtn" href="/offers/tours" class="card__button">Вижте повече</a>
                 </figcaption>
             </figure>
         </div>
@@ -58,29 +58,94 @@
 
     <div class="cards">
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-            <span> Предоставяне на комплексни решения, свързани с
-                      туристически пътувания на организирани групи,
-                      самоорганизирани групи и индивидуални туристи в страната и
-                      чужбина.</span></div>
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
+            <span id="check1"> Комплексни решения, свързани с туристически пътувания на организирани групи, самоорганизирани групи и индивидуални туристи в страната и чужбина.</span></div>
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-            <span>Предоставяне на екскурзоводски услуги от лицензирани
-                      екскурзоводи и водачи в България и чужбина за туристически
-                      групи, самоорганизирани групи и индивидуални туристи в
-                            страната и чужбина.</span></div>
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
+            <span id="check2">Екскурзоводски услуги от лицензирани екскурзоводи и водачи в България и чужбина за туристически групи, самоорганизирани групи и индивидуални туристи в страната и чужбина на популярни редки езици.</span></div>
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-            <span> Предоставяне на услуги при организиране и
-                      реализиране на местни и международни мероприятия –
-                      посещения на чуждестранни делегации, симпозиуми,
-                      конгреси, работни и делови срещи и други.</span></div>
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
+            <span id="check3"> Услуги при организиране и реализиране на местни и международни мероприятия – посещения на чуждестранни делегации, симпозиуми, конгреси, работни и делови срещи и други на популярни и редки езици.</span></div>
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-            <span> Предоставяне на услуги, свързани с придружаване на
-                            чуждестранни гости, симултанни и консекутивни преводи</span></div>
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
+            <span id="check4"> Услуги, свързани с придружаване на чуждестранни гости, симултанни и консекутивни преводи на популярни и редки езици.</span></div>
     </div>
 </div>
 
 </body>
 </html>
+<script>
+    var language = {
+        en: {
+            title: "Tourist Services",
+            bulgaria: "Tourist services in Bulgaria",
+            international: "Tourist services abroad",
+            tour: "Tour guide services",
+            more: "See more",
+            check1: "Complex solutions related to tourist trips for organized groups, self-organized groups and individual tourists in the country and abroad. .",
+            check2: "Guide services from licensed tour guides and guides in Bulgaria and abroad for tourist groups, self-organized groups and individual tourists in the country and abroad in popular rare languages. ",
+            check3: "Services in organizing and implementing local and international events - visits by foreign delegations, symposia, congresses, work and business meetings and others in popular and rare languages. ",
+            check4: "Services related to accompanying foreign guests, simultaneous and consecutive translations in popular and rare languages .",
+            aboutUsNav: "about us",
+            cooperativeNav: "cooperative",
+            serviceNav: "service",
+            contactUs: "Contact us"
+        },
+        bg: {
+            title: "Туристически услуги",
+            bulgaria: "Туристически услуги в България",
+            international: "Туристически услуги в чужбина",
+            tour: "Екскурзоводски услуги",
+            more: "Вижте още",
+            check1: "Комплексни решения, свързани с туристически пътувания на организирани групи, самоорганизирани групи и индивидуални туристи в страната и чужбина.",
+            check2: "Екскурзоводски услуги от лицензирани екскурзоводи и водачи в България и чужбина за туристически групи, самоорганизирани групи и индивидуални туристи в страната и чужбина на популярни редки езици.",
+            check3: "Услуги при организиране и реализиране на местни и международни мероприятия – посещения на чуждестранни делегации, симпозиуми, конгреси, работни и делови срещи и други на популярни и редки езици.",
+            check4: "Услуги, свързани с придружаване на чуждестранни гости, симултанни и консекутивни преводи на популярни и редки езици.",
+            aboutUsNav: "за нас",
+            cooperativeNav: "ЧЛЕНОВЕ",
+            serviceNav: "услуги",
+            contactUs: "контакти"
+        }
+    }
+    function changeLanguage(change = true) {
+        if(change) {
+            setCookie();
+        }
+
+        if(getCookie('language') === 'true') {
+            Title.textContent = language.bg.title;
+            serviceBulgaria.textContent = language.bg.bulgaria;
+            serviceInternational.textContent = language.bg.international;
+            serviceTour.textContent = language.bg.tour;
+            bgBtn.textContent = language.bg.more;
+            intBtn.textContent = language.bg.more;
+            trBtn.textContent = language.bg.more;
+            check1.textContent = language.bg.check1;
+            check2.textContent = language.bg.check2;
+            check3.textContent = language.bg.check3;
+            check4.textContent = language.bg.check4;
+            aboutUsNav.textContent=language.bg.aboutUsNav;
+            cooperativeNav.textContent=language.bg.cooperativeNav;
+            serviceNav.textContent=language.bg.serviceNav;
+            contactNav.textContent=language.bg.contactUs;
+        }else {
+            Title.textContent = language.en.title;
+            serviceBulgaria.textContent = language.en.bulgaria;
+            serviceInternational.textContent = language.en.international;
+            serviceTour.textContent = language.en.tour;
+            bgBtn.textContent = language.en.more;
+            intBtn.textContent = language.en.more;
+            trBtn.textContent = language.en.more;
+            check1.textContent = language.en.check1;
+            check2.textContent = language.en.check2;
+            check3.textContent = language.en.check3;
+            check4.textContent = language.en.check4;
+            aboutUsNav.textContent=language.en.aboutUsNav;
+            cooperativeNav.textContent=language.en.cooperativeNav;
+            serviceNav.textContent=language.en.serviceNav;
+            contactNav.textContent=language.en.contactUs;
+        }
+    }
+    changeLanguage(false);
+
+</script>

@@ -112,25 +112,28 @@
     <script>
         var language = {
             en: {
-                comName:"BTU-GUIDES",
-                comName2:'Tourist Agencty "KOOPTUR"',
+                comName:'COOPERATION "BTU-TOUR GUIDES"',
+                comName2:'TRAVEL AGENCY "COOPTOUR"',
                 contact:"Contact",
-                homeButton: "About us",
+                homeButton: "More about us",
                 ourPeople: "OUR COOPERATIVE MEMBERS",
-                ourPeopleBtn: "Cooperative members",
+                ourPeopleBtn: "Our members-cooperators",
                 services: "SERVICES",
                 offersCard: "TOURIST SERVICES IN BULGARIA AND ABROAD",
-                readMoreBtn: "Read more",
+                readMoreBtn: "See more",
                 courses: "COURSES, TRAININGS AND SEMINARS",
                 consult: "CONSULTING ACTIVITIES",
                 contactUs: "Contact us",
-                nameLabel: "Full name",
-                namePlaceHolder: "First and Last",
+                middleNameLabel: "Middle name",
+                surNameLabel: "Surname",
+                nameLabel: "Name",
+                namePlaceHolder: "Name",
                 messageLabel: "Message",
                 message: "Type your message here....",
                 aboutUsNav: "about us",
-                cooperativeNav: "cooperative",
-                serviceNav: "service"
+                cooperativeNav: "cooperation",
+                serviceNav: "SERVICES",
+
             },
             bg: {
                 comName:"КООПЕРАЦИЯ БТС-ЕКСКУРЗОВОДИ",
@@ -145,8 +148,10 @@
                 courses: "КУРСОВЕ, ОБУЧЕНИЯ И СЕМИНАРИ",
                 consult: "КОНСУЛТАНТСКИ ДЕЙНОСТИ",
                 contactUs: "Свържете се с нас",
-                nameLabel: "Пълно име",
-                namePlaceHolder: "Име и фамилия",
+                surNameLabel: "Фамилия",
+                nameLabel: "Име",
+                middleNameLabel: "Презиме",
+                namePlaceHolder: "Име",
                 messageLabel: "Съобщение",
                 message: "Напишете вашето съобщение....",
                 aboutUsNav: "ЗА НАС",
@@ -155,53 +160,63 @@
             }
         }
         function changeLanguage(change = true) {
-            if(change)
-            bgLanguage = !bgLanguage;
+            if(change) {
+                setCookie();
+            }
 
-                    if(!bgLanguage) {
-                        nameBtu.textContent=language.en.comName;
-                        nameBtu2.textContent = language.en.comName2;
-                        contactNav.textContent=language.en.contact;
-                        homeBtn.textContent=language.en.homeButton;
-                        ourPeople.textContent=language.en.ourPeople;
-                        ourPeopleBtn.textContent=language.en.ourPeopleBtn;
-                        services.textContent=language.en.services;
-                        offersCard.textContent=language.en.offersCard;
-                        offersCardBtn.textContent=language.en.readMoreBtn;
-                        courses.textContent=language.en.courses;
-                        coursesBtn.textContent=language.en.readMoreBtn;
-                        consult.textContent=language.en.consult;
-                        consultBtn.textContent=language.en.readMoreBtn;
-                        contactUs.textContent=language.en.contactUs;
-                        nameLabel.textContent=language.en.nameLabel;
-                        aboutUsNav.textContent=language.en.aboutUsNav;
-                        cooperativeNav.textContent=language.en.cooperativeNav;
-                        serviceNav.textContent=language.en.serviceNav;
-                        document.getElementById('name').placeholder=language.en.namePlaceHolder;
-                        messageLabel.textContent=language.en.messageLabel;
-                        document.getElementById('message').placeholder=language.en.message;
-                    }else {
-                        nameBtu.textContent=language.bg.comName;
-                        contactNav.textContent=language.bg.contact;
-                        nameBtu2.textContent=language.bg.comName2;
-                        homeBtn.textContent=language.bg.homeButton;
-                        ourPeople.textContent=language.bg.ourPeople;
-                        ourPeopleBtn.textContent=language.bg.ourPeopleBtn;
-                        services.textContent=language.bg.services;
-                        offersCard.textContent=language.bg.offersCard;
-                        offersCardBtn.textContent=language.bg.readMoreBtn;
-                        courses.textContent=language.bg.courses;
-                        coursesBtn.textContent=language.bg.readMoreBtn;
-                        consult.textContent=language.bg.consult;
-                        consultBtn.textContent=language.bg.readMoreBtn;
-                        contactUs.textContent=language.bg.contactUs;
-                        nameLabel.textContent=language.bg.nameLabel;
-                        aboutUsNav.textContent=language.bg.aboutUsNav;
-                        cooperativeNav.textContent=language.bg.cooperativeNav;
-                        serviceNav.textContent=language.bg.serviceNav;
-                        document.getElementById('name').placeholder=language.bg.namePlaceHolder;
-                        messageLabel.textContent=language.bg.messageLabel;
-                        document.getElementById('message').placeholder=language.bg.message;
+            if(getCookie('language') === 'true') {
+                nameBtu.textContent=language.bg.comName;
+                contactNav.textContent=language.bg.contact;
+                nameBtu2.textContent=language.bg.comName2;
+                homeBtn.textContent=language.bg.homeButton;
+                ourPeople.textContent=language.bg.ourPeople;
+                ourPeopleBtn.textContent=language.bg.ourPeopleBtn;
+                services.textContent=language.bg.services;
+                offersCard.textContent=language.bg.offersCard;
+                offersCardBtn.textContent=language.bg.readMoreBtn;
+                courses.textContent=language.bg.courses;
+                coursesBtn.textContent=language.bg.readMoreBtn;
+                consult.textContent=language.bg.consult;
+                consultBtn.textContent=language.bg.readMoreBtn;
+                contactUs.textContent=language.bg.contactUs;
+                nameLabel.textContent=language.bg.nameLabel;
+                middleNameLabel.textContent = language.bg.middleNameLabel;
+                familyNameLabel.textContent = language.bg.surNameLabel;
+                aboutUsNav.textContent=language.bg.aboutUsNav;
+                cooperativeNav.textContent=language.bg.cooperativeNav;
+                serviceNav.textContent=language.bg.serviceNav;
+                document.getElementById('name').placeholder=language.bg.namePlaceHolder;
+                messageLabel.textContent=language.bg.messageLabel;
+                document.getElementById('message').placeholder=language.bg.message;
+                document.getElementById('middleName').placeholder = language.bg.middleNameLabel;
+                document.getElementById('familyName').placeholder = language.bg.surNameLabel;
+
+            }else {
+                nameBtu.textContent=language.en.comName;
+                nameBtu2.textContent = language.en.comName2;
+                contactNav.textContent=language.en.contact;
+                homeBtn.textContent=language.en.homeButton;
+                ourPeople.textContent=language.en.ourPeople;
+                ourPeopleBtn.textContent=language.en.ourPeopleBtn;
+                services.textContent=language.en.services;
+                offersCard.textContent=language.en.offersCard;
+                offersCardBtn.textContent=language.en.readMoreBtn;
+                courses.textContent=language.en.courses;
+                coursesBtn.textContent=language.en.readMoreBtn;
+                consult.textContent=language.en.consult;
+                consultBtn.textContent=language.en.readMoreBtn;
+                contactUs.textContent=language.en.contactUs;
+                nameLabel.textContent=language.en.nameLabel;
+                middleNameLabel.textContent = language.en.middleNameLabel;
+                familyNameLabel.textContent = language.en.surNameLabel;
+                document.getElementById('middleName').placeholder = language.en.middleNameLabel;
+                document.getElementById('familyName').placeholder = language.en.surNameLabel;
+                aboutUsNav.textContent=language.en.aboutUsNav;
+                cooperativeNav.textContent=language.en.cooperativeNav;
+                serviceNav.textContent=language.en.serviceNav;
+                document.getElementById('name').placeholder=language.en.namePlaceHolder;
+                messageLabel.textContent=language.en.messageLabel;
+                document.getElementById('message').placeholder=language.en.message;
                     }
         }
         changeLanguage(false);

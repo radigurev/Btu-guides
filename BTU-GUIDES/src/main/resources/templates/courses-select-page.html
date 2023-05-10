@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="/css/nav3.css">
     <link rel="stylesheet" href="/css/course-select-style.css"/>
     <link rel="stylesheet" href="/css/responsive-cards.css"/>
+    <script src="/js/LangBool.js"></script>
 </head>
 <body>
 <nav th:replace="fragments/nav::nav">
 
 </nav>
 <header>
-    <h1>Курсове, обучения и семинари</h1>
+    <h1 id="Title">Курсове, обучения и семинари</h1>
 </header>
 
 
@@ -24,9 +25,9 @@
             <figure class="card__thumb">
                 <img src="https://res.cloudinary.com/dzqj0bike/image/upload/v1652190571/btu-guides/coursesSelectPage/pexels-pixabay-261651_g1yc6l.jpg" alt="Picture by Kyle Cottrell" class="card__image">
                 <figcaption class="card__caption">
-                    <h2 class="card__title">Курсове</h2>
+                    <h2 id="courseHeader" class="card__title">Курсове</h2>
                     <p class="card__snippet" style="opacity: 0">Туристически услуги извън България</p>
-                    <a href="/courses/course" class="card__button">Вижте повече</a>
+                    <a id="crBtn" href="/courses/course" class="card__button">Вижте повече</a>
                 </figcaption>
             </figure>
         </div>
@@ -34,10 +35,10 @@
             <figure class="card__thumb">
                 <img src="https://res.cloudinary.com/dzqj0bike/image/upload/v1652190702/btu-guides/coursesSelectPage/pexels-mikhail-nilov-9300740_1_g5zoq7.jpg" alt="Picture by Kyle Cottrell" class="card__image">
                 <figcaption class="card__caption">
-                    <h2 class="card__title">Семинари</h2>
+                    <h2 id="seminarHeader" class="card__title">Семинари</h2>
                     <p class="card__snippet" style="opacity: 0">Туристически услуги извън България</p>
 
-                    <a href="/courses/seminars" class="card__button">Вижте повече</a>
+                    <a id="smBtn" href="/courses/seminars" class="card__button">Вижте повече</a>
                 </figcaption>
             </figure>
         </div>
@@ -45,9 +46,9 @@
             <figure class="card__thumb">
                 <img src="https://res.cloudinary.com/dzqj0bike/image/upload/v1652191405/btu-guides/coursesSelectPage/pexels-rodnae-productions-7648024_ecoirm.jpg" alt="Picture by Nathan Dumlao" class="card__image">
                 <figcaption class="card__caption">
-                    <h2 class="card__title">Обучения</h2>
+                    <h2 id="trainingHeader" class="card__title">Обучения</h2>
                     <p class="card__snippet" style="opacity: 0">Туристически услуги извън България</p>
-                    <a href="/courses/training" class="card__button">Вижте повече</a>
+                    <a id="trBtn" href="/courses/training" class="card__button">Вижте повече</a>
                 </figcaption>
             </figure>
         </div>
@@ -56,24 +57,24 @@
 
     <div class="cards">
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-            <span> Организиране, провеждане и удостоверяване на курсове
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
+            <span id="check1"> Организиране, провеждане и удостоверяване на курсове
             за професионално обучение на екскурзоводи и тур – лидери,
             съгласно изискванията на закона за туризма и образованието.</span></div>
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-           <span> Организиране, провеждане и удостоверяване на
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
+           <span id="check2"> Организиране, провеждане и удостоверяване на
             практически занимания на завършилите обучение, включително в системата на средното
             и висше образование, екскурзоводи и тур-лидери, съгласно
             изискванията на закона за туризма и образованието.</span></div>
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-            <span>Организиране, провеждане и удостоверяване на
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
+            <span id="check3">Организиране, провеждане и удостоверяване на
             специализирани езикови курсове за квалификация и/или
             преквалификация в сферата на туризма.</span></div>
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-            <span> Организиране и провеждане на образователни курсове,
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
+            <span id="check4"> Организиране и провеждане на образователни курсове,
             включително общо и специализирано, присъствено и онлайн
                 езиково обучение на деца, ученици и възрастни.</span></div>
     </div>
@@ -83,13 +84,95 @@
 <script>
     var language = {
         en: {
-
+            title: "Courses, trainings and seminars",
+            course: "Courses",
+            seminar: "Seminars",
+            training: "Trainings",
+            more: "See more",
+            check1: "Organizing, conducting and certifying vocational training courses for\n" +
+                "tour guides and tour leaders,\n" +
+                "according to the requirements of the Tourism and Education Act.",
+            check2: "Organizing, conducting and certifying practical activities of graduates of\n" +
+                "training,\n" +
+                "including in the system of secondary and higher education, tour guides\n" +
+                "and tour leaders,\n" +
+                "in accordance with the requirements of the Tourism and Education Act.",
+            check3: "Organizing, conducting and certifying specialized language courses\n" +
+                "for qualification and / or retraining in the field of tourism.",
+            check4: "Organizing and conducting educational courses, including general and\n" +
+                "specialized,\n" +
+                "face-to-face and online language training for children, students and adults.",
+            aboutUsNav: "about us",
+            cooperativeNav: "cooperative",
+            serviceNav: "service",
+            contactUs: "Contact us"
         },
-
         bg: {
+            title: "Курсове, обучения и семинари",
+            course: "Курсове",
+            seminar: "Семинари",
+            training: "Обучения",
+            more: "Виж още",
+            check1: "Организиране, провеждане и удостоверяване на курсове\n" +
+                "            за професионално обучение на екскурзоводи и тур – лидери,\n" +
+                "            съгласно изискванията на закона за туризма и образованието.",
+            check2: "Организиране, провеждане и удостоверяване на\n" +
+                "            практически занимания на завършилите обучение, включително в системата на средното\n" +
+                "            и висше образование, екскурзоводи и тур-лидери, съгласно\n" +
+                "            изискванията на закона за туризма и образованието.",
+            check3: "Организиране, провеждане и удостоверяване на\n" +
+                "            специализирани езикови курсове за квалификация и/или\n" +
+                "            преквалификация в сферата на туризма.",
+            check4: "Организиране и провеждане на образователни курсове,\n" +
+                "            включително общо и специализирано, присъствено и онлайн\n" +
+                "                езиково обучение на деца, ученици и възрастни.",
+            aboutUsNav: "за нас",
+            cooperativeNav: "ЧЛЕНОВЕ",
+            serviceNav: "услуги",
+            contactUs: "контакти"
+        }
+    }
+    function changeLanguage(change = true) {
+        if(change) {
+            setCookie();
+        }
 
+        if(getCookie('language') === 'true') {
+            Title.textContent = language.bg.title;
+            courseHeader.textContent = language.bg.course;
+            trainingHeader.textContent = language.bg.training;
+            seminarHeader.textContent = language.bg.seminar;
+            crBtn.textContent = language.bg.more;
+            smBtn.textContent = language.bg.more;
+            trBtn.textContent = language.bg.more;
+            check1.textContent = language.bg.check1;
+            check2.textContent = language.bg.check2;
+            check3.textContent = language.bg.check3;
+            check4.textContent = language.bg.check4;
+            aboutUsNav.textContent=language.bg.aboutUsNav;
+            cooperativeNav.textContent=language.bg.cooperativeNav;
+            serviceNav.textContent=language.bg.serviceNav;
+            contactNav.textContent=language.bg.contactUs;
+        }else {
+            Title.textContent = language.en.title;
+            courseHeader.textContent = language.en.course;
+            trainingHeader.textContent = language.en.training;
+            seminarHeader.textContent = language.en.seminar;
+            crBtn.textContent = language.en.more;
+            smBtn.textContent = language.en.more;
+            trBtn.textContent = language.en.more;
+            check1.textContent = language.en.check1;
+            check2.textContent = language.en.check2;
+            check3.textContent = language.en.check3;
+            check4.textContent = language.en.check4;
+            aboutUsNav.textContent=language.en.aboutUsNav;
+            cooperativeNav.textContent=language.en.cooperativeNav;
+            serviceNav.textContent=language.en.serviceNav;
+            contactNav.textContent=language.en.contactUs;
+        }
     }
-    }
+    changeLanguage(false);
+
 </script>
 
 </html>

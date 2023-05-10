@@ -104,7 +104,6 @@ header::before {
 .float {
     float: left;
     margin-right: 40px;
-    margin-top: -5px;
 }
    
   @media (max-width: 1750px) {

@@ -11,6 +11,7 @@ public class Partners extends BaseEntity{
         private String url;
         private String type;
         private String companyUrl;
+        private String nameEN;
 
     public String getName() {
         return name;
@@ -42,5 +43,13 @@ public class Partners extends BaseEntity{
 
     public void setCompanyUrl(String companyUrl) {
         this.companyUrl = companyUrl;
+    }
+
+    public String getNameEN() {
+        return nameEN;
+    }
+
+    public void setNameEN(String nameEN) {
+        this.nameEN = nameEN;
     }
 }

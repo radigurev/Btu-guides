@@ -30,6 +30,9 @@ header {
     text-transform: uppercase;
 }
 
+.displayNone {
+    display: none !important;
+}
 header h1 {
     margin: 0;
     position: absolute;
@@ -121,7 +124,7 @@ header::before {
       background-color: #c8e3fd;
     grid-gap: 2rem;
     position: absolute;
-    top: 1800px;
+    top: 1350px;
     left: 50%;
     transform: translate(-50%,-50%);
     transition: all 0.5s ease;
@@ -132,7 +135,7 @@ header::before {
 
     font-weight: bold;
     position: absolute;
-    left: 50%;
+    left: 28%;
     transform: translate(-50%,-50%);
 }
 
@@ -140,14 +143,15 @@ header::before {
         font-weight: bold;
         position: absolute;
         left: 50%;
-        top: 950px;
+        top: 850px;
         transform: translate(-50%,-50%);
     }
 
 .partners {
     position: absolute;
-    top: 3500px;
+    top: 2700px;
     left: 50%;
+    color: #131644!important;
     transform: translate(-50%,-50%);
 }
 .fa-check {
@@ -162,12 +166,11 @@ header::before {
 .float {
     float: left;
     margin-right: 40px;
-    margin-top: -5px;
 }
 
 .links {
     position: absolute;
-    top: 3990px;
+    top: 3290px;
     left: 50%;
     transform: translate(-50%,-50%);
     display: block;
@@ -181,7 +184,12 @@ header::before {
     color: gray;
 }
 
-
+@Media (max-width: 1400px) {
+    .grid {
+        font-weight: 600;
+        font-size: 22px;
+    }
+}
 @Media (min-width: 800px) {
     .cards { grid-template-columns: repeat(2, 1fr);
   }
@@ -204,9 +212,11 @@ header::before {
     }
   
    @media (max-width:800px) {
-
+    .history {
+        left: 50%;
+    }
        .goals {
-           top: 1550px;
+           top: 1250px;
        }
     .left {
         font-size: 25px;
@@ -221,7 +231,7 @@ header::before {
     }
 
     .cards {
-        top: 3230px;
+        top: 1830px;
        font-size: 13px;
     }
     /*.grid {*/
@@ -232,11 +242,20 @@ header::before {
     /*}*/
 
     .partners {
-        top: 5850px;
+        top: 3550px;
     }
 
     .links {
-        top: 6250px;
+        top: 4050px;
     }
   
    }
+
+@media (max-width: 600px) {
+    .goals {
+        top: 1500px;
+    }
+    .cards {
+        top: 2150px;
+    }
+}

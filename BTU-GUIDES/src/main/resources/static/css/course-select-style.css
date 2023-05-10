@@ -115,7 +115,6 @@ header::before {
 .float {
     float: left;
     margin-right: 40px;
-    margin-top: -5px;
 }
 @Media (max-width: 1200px) {
     .grid {

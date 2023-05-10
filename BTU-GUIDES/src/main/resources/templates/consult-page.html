@@ -7,31 +7,32 @@
         <link rel="stylesheet" href="/css/consult-style.css"/>
         <link rel="stylesheet" href="/css/nav.css">
         <script src="https://kit.fontawesome.com/4aa5357101.js" crossorigin="anonymous"></script>
+        <script src="/js/LangBool.js"></script>
     </head>
     <body>
     <nav th:replace="fragments/nav::nav">
 
     </nav>
         <header>
-            <h1>Консултации</h1>
+            <h1 id="Title">Консултантски дейности</h1>
         </header>
         <div class="container">
             <div class="cards">
                 <div class="card">
-                    <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-                    <span> При създаване на кооперации, свързани с туристическата
+                    <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
+                    <span id="check1"> При създаване на кооперации, свързани с туристическата
                         индустрия.</span></div>
                 <div class="card">
-                    <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-                    <span> При кандидатстване по програми и проекти за
+                    <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
+                    <span id="check2"> При кандидатстване по програми и проекти за
                         финансиране, свързани с туристическата индустрия.</span></div>
                 <div class="card">
-                    <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-                   <span> При необходимост от осъществяване на маркетингова
+                    <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
+                   <span id="check3"> При необходимост от осъществяване на маркетингова
                     дейност и проучвания на територията на Република България.</span></div>
                 <div class="card">
-                    <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
-                    <span> При създаване, реализация и популяризиране на
+                    <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
+                    <span id="check4"> При създаване, реализация и популяризиране на
                     туристически продукти на местно и национално ниво от
                         туристически информационни центрове (ТИЦ).</span></div>
               </div>
@@ -39,3 +40,67 @@
 
     </body>
 </html>
+<script>
+    var language = {
+        en: {
+            title: "Consulting",
+            check1: "When creating cooperatives related to the tourism industry.",
+            check2: "When applying for funding on programs and projects related to the\n" +
+                "tourism industry.",
+            check3: "If necessary to carry out marketing activities and research on the\n" +
+                "territory of the Republic of Bulgaria.",
+            check4: "In the creation, realization and promotion of tourism products at local\n" +
+                "and\n" +
+                "national level by tourist information centers (TICs).",
+            aboutUsNav: "about us",
+            cooperativeNav: "cooperative",
+            serviceNav: "service",
+            contactUs: "Contact us"
+        },
+        bg: {
+            title: "Консултантски дейности",
+            check1: "При създаване на кооперации, свързани с туристическата\n" +
+                "                        индустрия.",
+            check2: "При кандидатстване по програми и проекти за\n" +
+                "                        финансиране, свързани с туристическата индустрия.",
+            check3: "При необходимост от осъществяване на маркетингова\n" +
+                "                    дейност и проучвания на територията на Република България.",
+            check4: "При създаване, реализация и популяризиране на\n" +
+                "                    туристически продукти на местно и национално ниво от\n" +
+                "                        туристически информационни центрове (ТИЦ).",
+            aboutUsNav: "за нас",
+            cooperativeNav: "ЧЛЕНОВЕ",
+            serviceNav: "услуги",
+            contactUs: "контакти"
+        }
+    }
+    function changeLanguage(change = true) {
+        if(change) {
+            setCookie();
+        }
+
+        if(getCookie('language') === 'true') {
+            Title.textContent = language.bg.title;
+            check1.textContent = language.bg.check1;
+            check2.textContent = language.bg.check2;
+            check3.textContent = language.bg.check3;
+            check4.textContent = language.bg.check4;
+            aboutUsNav.textContent=language.bg.aboutUsNav;
+            cooperativeNav.textContent=language.bg.cooperativeNav;
+            serviceNav.textContent=language.bg.serviceNav;
+            contactNav.textContent=language.bg.contactUs;
+        }else {
+            Title.textContent = language.en.title;
+            check1.textContent = language.en.check1;
+            check2.textContent = language.en.check2;
+            check3.textContent = language.en.check3;
+            check4.textContent = language.en.check4;
+            aboutUsNav.textContent=language.en.aboutUsNav;
+            cooperativeNav.textContent=language.en.cooperativeNav;
+            serviceNav.textContent=language.en.serviceNav;
+            contactNav.textContent=language.en.contactUs;
+        }
+    }
+    changeLanguage(false);
+
+</script>

@@ -26,21 +26,22 @@
     <h1 id="historyTitle" class="history">История</h1>
     <div class="wrapper">
         <div class="left">
-                    <span id="historyText"> През 2021 г. бе учредена и регистрирана като юридическо
-                        лице първата специализирана кооперация в сферата на
-                        туризма – Кооперация „БТС – Екскурзоводи”.
-                        Кооперацията е създадена като доброволно сдружение
-                        на физически лица, които чрез съвместни действия,
-                        взаимопомощ и сътрудничество, извършват стопанска и
-                        търговска дейност по смисъла на действащите в Република
-                        България Търговски закон и Закон за кооперациите.
-                        Като търговско дружество със стопанска цел,
-                        кооперацията осъществява съвместна дейност с Български
-                        туристически съюз, туристически сдружения, както и с
-                        неправителствени организации, изпълняващи дейности с
-                        идеална нестопанска цел и представени от сдруженията на
-                        екскурзоводите в България (Асоциация на екскурзоводите в
-                        България, Съюз на екскурзоводите в България и други).</span>
+                    <span id="historyText">
+През 2021 г. бе учредена и регистрирана като юридическо
+лице първата специализирана кооперация в сферата на
+туризма – Кооперация „БТС – Екскурзоводи”.
+Кооперацията е създадена като доброволно сдружение
+на физически лица, които чрез съвместни действия,
+взаимопомощ и сътрудничество, извършват стопанска и
+търговска дейност по смисъла на действащите в Република
+България Търговски закон и Закон за кооперациите.
+Като търговско дружество със стопанска цел,
+кооперацията осъществява съвместна дейност с Български
+туристически съюз, туристически сдружения, както и с
+неправителствени организации, изпълняващи дейности с
+идеална нестопанска цел и представени от сдруженията на
+екскурзоводите в България (Асоциация на екскурзоводите в
+България, Съюз на екскурзоводите в България и други).</span>
         </div>
         <div class="image">
             <iframe class="responsive-iframe" src="https://www.youtube.com/embed/i823oecWW5k"></iframe>
@@ -51,7 +52,7 @@
 
     <div class="cards">
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
             <div> <span id="check1">Осигуряване на качествени екскурзоводски услуги за
                     удовлетворяване изискванията на клиентите в максимална
                     степен при съблюдаване на икономическите интереси на
@@ -60,7 +61,7 @@
                     финансови ресурси. </span></div>
         </div>
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
             <div><span id="check2"> Повишаване на професионалната квалификация,
             образованието и практическата подготовка, необходими за
             гарантиране на общоприетите стандарти и съвременни
@@ -69,22 +70,22 @@
             </div>
         </div>
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
             <div><span id="check3"> Осигуряване и поддържане на актуална информация за
             туристическите забележителности чрез съвременни,
                 включително дигитални средства.</span></div>
         </div>
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
             <div><span id="check4">Участие в разработване и утвърждаване на стандарти за
                     работа на екскурзоводите и водачите на туристически групи
                 по направления.</span></div></div>
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
             <div><span id="check5">Предоставяне на качествени туристически услуги – екскурзии, почивки и обучения
                 в България и чужбина, групови и индивидуални.</span></div></div>
         <div class="grid">
-            <div class="float"><i class="fa-solid fa-check fa-4x fa-border"></i></div>
+            <div class="float"><i class="fa-solid fa-check fa-2x fa-border"></i></div>
             <div><span id="check6">Предоставяне на качествени туристически услуги за осъществяване на
                 конферентен туризъм в България и чужбина.</span></div></div>
     </div>
@@ -100,12 +101,14 @@
 </div>
 
 <div class="links">
-    <a th:each="p : ${partners}" th:text="${p.name}" th:href="@{${p.url}}">Софийски туристически район</a>
+    <a class="bglinks" th:each="p : ${partners}" th:text="${p.name}" th:href="@{${p.url}}">Софийски туристически район</a>
+    <a class="enlinks" th:each="p : ${partners}" th:text="${p.nameEN}" th:href="@{${p.url}}">Софийски туристически район</a>
     <br>
     <br>
     <a id="link" href="https://drive.google.com/file/d/17AhAlfoRx9Nj9bk7n4hI17hNJwctlQqF/view?usp=sharing">Политика за защита на
         личните данни</a>
 </div>
+
 
 </div>
 </body>
@@ -115,15 +118,8 @@
         en: {
             title: "About us",
             history: "History",
-            historyText: "BTS Cooperative, the first ever cooperative in the field of tourism, was\n" +
-                "established in 2021.\n" +
-                "The cooperative was created as a voluntary association of individuals,\n" +
-                "carrying out economic and commercial activity\n" +
-                "through joint actions, mutual assistance and cooperation in the sense of\n" +
-                "the commercial law and the law on cooperatives\n" +
-                "\n" +
-                "in force in the Republic of Bulgaria",
-            goals: "Goals",
+            historyText: "Cooperation “BTU – Guides”, the first ever cooperation in the field of tourism, was established in 2021. It was created as a voluntary association of individuals, carrying out economic and commercial activity through joint actions, mutual assistance and cooperation in the sense of the commercial law and the law on cooperatives in force in the Republic of Bulgaria. As a commercial company with an economic purpose, our cooperation carries out joint activities with the Bulgarian Tourist Union, tourist associations, as well as with non-governmental organizations performing activities with an ideal non-profit purpose and represented by the associations of tour guides in Bulgaria (Association of Tour Guides in Bulgaria, Union of Tour Guides in Bulgaria and others).",
+            goals: "Our mission is",
             check1:"Delivering high quality travel services, satisfying the requirements of\n" +
                 "our customers to the highest possible degree,\n" +
                 "all the while зидшеъшсдхж the economic interests of the tour guides\n" +
@@ -146,20 +142,93 @@
                 "and abroad.",
             partners: "Partners",
             linkName: "Personal Data Protection Policy",
-            linkHref: ""
+            linkHref: "https://docs.google.com/document/d/16KxKdNnXJmellvHjxqO5lNWJkvEmhXHM/edit?usp=sharing&ouid=112307813277185158353&rtpof=true&sd=true",
+            aboutUsNav: "about us",
+            cooperativeNav: "cooperative",
+            serviceNav: "service",
+            contactUs: "Contact us"
         },
         bg: {
-            title: "За нас"
+            title: "За нас",
+            history: "История",
+            historyText: "През 2021 г. бе учредена и регистрирана като юридическо\n" +
+                "лице първата специализирана кооперация в сферата на\n" +
+                "туризма – Кооперация „БТС – Екскурзоводи”.\n" +
+                "Кооперацията е създадена като доброволно сдружение\n" +
+                "на физически лица, които чрез съвместни действия,\n" +
+                "взаимопомощ и сътрудничество, извършват стопанска и\n" +
+                "търговска дейност по смисъла на действащите в Република\n" +
+                "България Търговски закон и Закон за кооперациите.\n" +
+                "Като търговско дружество със стопанска цел,\n" +
+                "кооперацията осъществява съвместна дейност с Български\n" +
+                "туристически съюз, туристически сдружения, както и с\n" +
+                "неправителствени организации, изпълняващи дейности с\n" +
+                "идеална нестопанска цел и представени от сдруженията на\n" +
+                "екскурзоводите в България (Асоциация на екскурзоводите в\n" +
+                "България, Съюз на екскурзоводите в България и други).",
+            goals: "Нашата мисия е",
+            check1:"Осигуряване на качествени екскурзоводски услуги за\n" +
+                "                    удовлетворяване изискванията на клиентите в максимална\n" +
+                "                    степен при съблюдаване на икономическите интереси на\n" +
+                "                    екскурзоводите и водачите на туристически групи и\n" +
+                "                    рационално използване на наличните материални, трудови и\n" +
+                "                    финансови ресурси.",
+            check2: "Повишаване на професионалната квалификация,\n" +
+                "            образованието и практическата подготовка, необходими за\n" +
+                "            гарантиране на общоприетите стандарти и съвременни\n" +
+                "            изисквания за упражняване на професията на екскурзовода и\n" +
+                "            водача на туристически групи.",
+            check3: "Осигуряване и поддържане на актуална информация за\n" +
+                "            туристическите забележителности чрез съвременни,\n" +
+                "                включително дигитални средства.",
+            check4: "Участие в разработване и утвърждаване на стандарти за\n" +
+                "                    работа на екскурзоводите и водачите на туристически групи\n" +
+                "                по направления.",
+            check5: "Предоставяне на качествени туристически услуги – екскурзии, почивки и обучения\n" +
+                "                в България и чужбина, групови и индивидуални.",
+            check6: "Предоставяне на качествени туристически услуги за осъществяване на\n" +
+                "                конферентен туризъм в България и чужбина.",
+            partners: "Партньори",
+            linkName: "Политика за защита на личните данни",
+            linkHref: "https://drive.google.com/file/d/17AhAlfoRx9Nj9bk7n4hI17hNJwctlQqF/view?usp=sharing",
+            aboutUsNav: "за нас",
+            cooperativeNav: "ЧЛЕНОВЕ",
+            serviceNav: "услуги",
+            contactUs: "контакти"
         }
     }
 
     function changeLanguage(change = true) {
-        if(change)
-      bgLanguage = !bgLanguage;
+        if(change) {
+            setCookie();
+        }
 
-        if(bgLanguage) {
+        if(getCookie('language') === 'true') {
             aboutTitle.textContent = language.bg.title;
-
+            historyTitle.textContent = language.bg.history;
+            historyText.textContent = language.bg.historyText;
+            goals.textContent = language.bg.goals;
+            check1.textContent = language.bg.check1;
+            check2.textContent = language.bg.check2;
+            check3.textContent = language.bg.check3;
+            check4.textContent = language.bg.check4;
+            check5.textContent = language.bg.check5;
+            check6.textContent = language.bg.check6;
+            partners.textContent = language.bg.partners;
+            link.textContent = language.bg.linkName;
+            link.href = language.bg.linkHref;
+            aboutUsNav.textContent=language.bg.aboutUsNav;
+            cooperativeNav.textContent=language.bg.cooperativeNav;
+            serviceNav.textContent=language.bg.serviceNav;
+            contactNav.textContent=language.bg.contactUs;
+            let linksBG = [...document.getElementsByClassName('bglinks')];
+            let linksEN = [...document.getElementsByClassName('enlinks')];
+            linksBG.forEach(element => {
+                element.classList.remove('displayNone');
+            });
+            linksEN.forEach(element => {
+                element.classList.add('displayNone');
+            });
         }else {
             aboutTitle.textContent = language.en.title;
             historyTitle.textContent = language.en.history;
@@ -173,6 +242,19 @@
             check6.textContent = language.en.check6;
             partners.textContent = language.en.partners;
             link.textContent = language.en.linkName;
+            link.href = language.en.linkHref;
+            aboutUsNav.textContent=language.en.aboutUsNav;
+            cooperativeNav.textContent=language.en.cooperativeNav;
+            serviceNav.textContent=language.en.serviceNav;
+            contactNav.textContent=language.en.contactUs;
+            let linksBG = [...document.getElementsByClassName('bglinks')];
+            let linksEN = [...document.getElementsByClassName('enlinks')];
+            linksEN.forEach(element => {
+                element.classList.remove('displayNone');
+            });
+            linksBG.forEach(element => {
+                element.classList.add('displayNone');
+            });
         }
     }
     changeLanguage(false);
