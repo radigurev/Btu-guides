@@ -9,7 +9,9 @@ import javax.persistence.Table;
 public class translate extends BaseEntity{
     private String url;
     private String title;
+    private String titleEn;
     private String description;
+    private String descriptionEn;
 
     @Column(columnDefinition = "TEXt")
     public String getUrl() {
@@ -34,5 +36,21 @@ public class translate extends BaseEntity{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getTitleEn() {
+        return titleEn;
+    }
+
+    public void setTitleEn(String titleEn) {
+        this.titleEn = titleEn;
+    }
+
+    public String getDescriptionEn() {
+        return descriptionEn;
+    }
+
+    public void setDescriptionEn(String descriptionEn) {
+        this.descriptionEn = descriptionEn;
     }
 }

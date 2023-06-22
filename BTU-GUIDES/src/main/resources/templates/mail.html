@@ -1,59 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="/css/index-style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-  <link rel="stylesheet" href="/css/nav3.css">
-  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <script src="/js/recaptcha.js"></script>
-  <script src="/js/translate.js"></script>
+    <link rel="stylesheet" href="/css/index-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="/css/nav3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="/js/recaptcha.js"></script>
+    <script src="/js/translate.js"></script>
+    <script src="/js/LangBool.js"></script>
+
 </head>
 <body>
 <nav th:replace="fragments/nav::nav"></nav>
 <section id="contact">
-<div class="wrapper">
-  <h2 id="contactUs">Свържете се с нас</h2>
-  <form th:action="@{/mail/{id}(id = ${Id})}" th:method="POST" th:object="${contactBindingModel}">
-    <div class="form-group">
-      <div>
-        <label id="nameLabel" for="name">Име <span class="required">*</span></label>
-        <input th:field="*{name}" type="text" name="Name" id="name" placeholder="Име" required minlength="3" maxlength="25" />
-      </div>
-      <div>
-        <label id="middleNameLabel" for="name">Презиме </label>
-        <input th:field="*{secondName}" type="text" name="Name" id="middleName" placeholder="Презиме" minlength="3" maxlength="25" />
-      </div>
-      <div>
-        <label id="familyNameLabel" for="name">Фамилия <span class="required">*</span></label>
-        <input th:field="*{familyName}" type="text" name="Name" id="familyName" placeholder="Фамилия" required minlength="3" maxlength="25" />
-      </div>
+    <div class="wrapper">
+        <h2 id="Title">Резервация</h2>
+        <form th:action="@{/mail/{id}(id = ${Id})}" th:method="POST" th:object="${reservationBindingModel}">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label id="nameLabel" for="name">Име <span class="required">*</span></label>
+                    <br />
+                    <input th:field="*{firstName}" type="text" name="Name" id="name" required minlength="3"
+                           maxlength="25"/>
+                </div>
+                <div class="col-4">
+                    <label id="middleNameLabel" for="middleName">Презиме </label>
+                    <br />
+                    <input th:field="*{middleName}" type="text" name="Name" id="middleName" minlength="3"
+                           maxlength="25"/>
+                </div>
+                <div class="col-4">
+                    <label id="familyNameLabel" for="familyName">Фамилия <span class="required">*</span></label>
+                    <br />
+                    <input th:field="*{lastName}" type="text" name="Name" id="familyName" required minlength="3"
+                           maxlength="25"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-6">
+                    <label id="kidsLabel" for="kids">Деца/брой и възраст <span class="required">*</span></label>
+                    <br />
+                    <input th:field="*{kids}" type="text" name="Name" id="kids" required minlength="1"/>
+                </div>
+                <div class="col-6">
+                    <label id="adultsLabel" for="adults">Възрастни/брой <span class="required">*</span></label>
+                    <br />
+                    <input th:field="*{adults}" type="text" name="Name" id="adults" required minlength="1"/>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-3">
+                    <label id="singleRoomsNameLabel" for="singleRooms">Единични стаи <span
+                            class="required">*</span></label>
+                    <br />
+                    <input th:field="*{singleRooms}" type="number" name="Name" id="singleRooms" required min="0"/>
+                </div>
+                <div class="col-3">
+                    <label id="doubleRoomsNameLabel" for="doubleRooms">Двойни стаи/студия <span
+                            class="required">*</span></label>
+                    <br />
+                    <input th:field="*{doubleRooms}" type="number" name="Name" id="doubleRooms" required min="0"/>
+                </div>
+                <div class="col-3">
+                    <label id="tripleRoomsNameLabel" for="tripleRooms">Тройни стаи/ студия <span
+                            class="required">*</span></label>
+                    <br />
+                    <input th:field="*{tripleRooms}" type="number" name="Name" id="tripleRooms" required min="0"/>
+                </div>
+                <div class="col-3">
+                    <label id="apartmentsNameLabel" for="apartments">Апартаменти <span class="required">*</span></label>
+                    <br />
+                    <input th:field="*{apartments}" type="number" name="Name" id="apartments" required min="0"/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3">
+                    <label id="bonusBedsNameLabel" for="bonusBeds">Период на престоя – от <span class="required">*</span></label>
+                    <br />
+                    <input th:field="*{bonusBeds}" type="number"
+                           id="bonusBeds" required min="0"/>
+                </div>
+                <div class="col-3">
+                    <label id="fromDateNameLabel" for="fromDate">Период на престоя – от <span class="required">*</span></label>
+                    <br />
+                    <input th:field="*{fromDate}" placeholder="dd-mm-yyyy" type="date"
+                           pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" id="fromDate" required min="0"/>
+                </div>
+                <div class="col-3">
+                    <label id="toDateNameLabel" for="toDate">Период на престоя – до <span
+                            class="required">*</span></label>
+                    <br />
+                    <input th:field="*{toDate}" type="date" name="Name" id="toDate" placeholder="Име" required min="0"/>
+                </div>
+                <div class="col-3">
+                    <label id="Type">База ВВ,НВ,FB</label>
+                    <br />
+                    <select th:field="*{type}">
+                        <option id="opt1" value="Нощувка">Нощувка</option>
+                        <option id="opt2" value="BB">На база ВВ (нощувка и закуска)</option>
+                        <option id="opt3" value="HB">На база НВ (нощувка,закуска и вечеря)</option>
+                        <option id="opt4" value="FB">На база FB (нощувка, закуска, обяд и вечеря)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label id="emailLabel" for="email">Email <span class="required">*</span></label>
+                <br />
+                <input th:field="*{email}" type="email" name="Email" id="email"
+                       required/>
+            </div>
+            <div class="form-group">
+                <label id="messageLabel" for="message">Съобщение</label>
+                <br />
+                <textarea th:field="*{more}" name="Message" id="message" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <button id="submitBtn" type="submit" class="submit"><i class="far fa-paper-plane"></i>Send</button>
+            </div>
+            <div class="g-recaptcha" data-sitekey="6LcJ3GMfAAAAAGfEaxaWoSXg_5yRsh7lMzDskVwq">
+            </div>
+            <span id="robot-message" th:text="${message}"></span>
+            <div class="floater">
+                <div>
+                    <input th:field="*{check}" type="checkbox" id="check2" name="todo" value="todo"/>
+                    <label id="checkLabel1" for="check2">Сългасен с  </label>
+                    <a id="href1" target="_blank"
+                                                              href="https://drive.google.com/file/d/1mwTsQYGSZAtWXaOXUxKtIdAPgi8LicOF/view?usp=sharing"> Условията
+                    за настаняване</a> <span class="required">*</span>
+
+                </div>
+                <div>
+                    <input th:field="*{check2}" type="checkbox" id="check3" name="todo" value="todo"/>
+                    <label id="checkLabel2" for="check3">Съгласен с  </label>
+                    <a id="href2"
+                        href="https://drive.google.com/file/d/17AhAlfoRx9Nj9bk7n4hI17hNJwctlQqF/view?usp=sharing"
+                        target="_blank"> Политика за защита на личните данни</a> <span class="required">*</span>
+                </div>
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-      <label for="email">Email <span class="required">*</span></label>
-      <input th:field="*{email}" type="email" name="Email" id="email" placeholder="email@domain.tld" required />
-    </div>
-    <div class="form-group">
-      <label id="messageLabel" for="message">Съобщение <span class="required">*</span></label>
-      <textarea th:field="*{text}" name="Message" id="message" rows="5" placeholder="Напишете вашето съобщение...."></textarea>
-    </div>
-    <div class="form-group">
-      <button id="submitBtn" type="submit" class="submit"><i class="far fa-paper-plane"></i>Изпрати</button>
-    </div>
-    <div class="g-recaptcha" data-sitekey="6LcJ3GMfAAAAAGfEaxaWoSXg_5yRsh7lMzDskVwq">
-    </div>
-    <span id="robot-message" th:text="${message}"></span>
-  </form>
-</div>
 </section>
 </body>
 </html>
+<script>
+    var language = {
+        en: {
+            title: "Reservation",
+            aboutUsNav: "about us",
+            cooperativeNav: "cooperative",
+            serviceNav: "services",
+            contactUs: "Contact us",
+            nameLabel: "Name",
+            middleNameLabel: "Middle Name",
+            familyNameLabel: "Family Name",
+            kidsLabel: "Children/number and age",
+            adultsLabel: "Adults/number",
+            singleRoomLabel: "Single rooms",
+            doubleRoomLabel: "Double rooms/studios",
+            tripleRoomLabel: "Triple rooms/studios",
+            apartmentLabel: "Apartments",
+            bedsLabel: "Extra beds",
+            dateFromLabel: "Period of stay - from",
+            DateToLabel: "Period of stay - to",
+            nightsLabel: "Number of nights",
+            serviceTypeLabel: "Service type BB,HB,FB",
+            noticeLabel: "Notice",
+            agreeWith: "Agree with",
+            href1: "https://drive.google.com/file/d/1YvPHYFmxx6-VgJgSG0U1Os__ZmzaeTlS/view?usp=sharing",
+            href2: "https://drive.google.com/file/d/1A8YNW_uH4xRZkX5SSYVWGsVpjnEN_wLi/view?usp=sharing",
+            AccommodationConditions: "Accommodation Conditions",
+            PrivacyPolicy: "Personal Data Protection Policy",
+            opt1: "Overnight stay",
+            opt2: "BB (bed and breakfast) basis",
+            opt3: "HB (bed, breakfast and dinner) basis",
+            opt4: "FB (bed, breakfast, lunch and dinner) basis"
+        },
+        bg: {
+            title: "Резервация",
+            aboutUsNav: "за нас",
+            cooperativeNav: "ЧЛЕНОВЕ",
+            serviceNav: "услуги",
+            contactUs: "контакти",
+            middleNameLabel: "Презиме",
+            nameLabel: "Име",
+            familyNameLabel: "Фамилия",
+            kidsLabel: "Деца/брой и възраст",
+            adultsLabel: "Възрастни/брой",
+            singleRoomLabel: "Единични стаи",
+            doubleRoomLabel: "Двойни стаи/студия",
+            tripleRoomLabel: "Тройни стаи/студия",
+            apartmentLabel: "Апартаменти",
+            bedsLabel: "Допълнителни легла",
+            dateFromLabel: "Период на престоя – от",
+            DateToLabel: "Период на престоя – до",
+            nightsLabel: "Брой нощувки",
+            serviceTypeLabel: "Вид услуга BB,HB,FB",
+            noticeLabel: "Забележка",
+            agreeWith: "Съгласен с",
+            href1: "https://drive.google.com/file/d/1mwTsQYGSZAtWXaOXUxKtIdAPgi8LicOF/view?usp=sharing",
+            href2: "https://drive.google.com/file/d/17AhAlfoRx9Nj9bk7n4hI17hNJwctlQqF/view?usp=sharing",
+            AccommodationConditions: "Условията за настаняване",
+            PrivacyPolicy: "Политика за защита на личните данни",
+            opt1: "Нощувка",
+            opt2: "На база ВВ (нощувка и закуска)",
+            opt3: "На база НВ (нощувка, закуска и вечеря)",
+            opt4: "На база FB (нощувка, закуска, обяд и вечеря)"
+        }
+    }
+    function changeLanguage(change = true) {
+        if(change) {
+            setCookie();
+            console.log(getCookie('language'));
+        }
 
+        if(getCookie('language') === 'true') {
+            Title.textContent = language.bg.title;
+            aboutUsNav.textContent=language.bg.aboutUsNav;
+            cooperativeNav.textContent=language.bg.cooperativeNav;
+            serviceNav.textContent=language.bg.serviceNav;
+            contactNav.textContent=language.bg.contactUs;
+            middleNameLabel.textContent=language.bg.middleNameLabel;
+            nameLabel.textContent=language.bg.nameLabel;
+            familyNameLabel.textContent=language.bg.familyNameLabel;
+            kidsLabel.textContent=language.bg.kidsLabel;
+            adultsLabel.textContent=language.bg.adultsLabel;
+            singleRoomsNameLabel.textContent=language.bg.singleRoomLabel;
+            doubleRoomsNameLabel.textContent=language.bg.doubleRoomLabel;
+            tripleRoomsNameLabel.textContent=language.bg.tripleRoomLabel;
+            apartmentsNameLabel.textContent=language.bg.apartmentLabel;
+            bonusBedsNameLabel.textContent=language.bg.bedsLabel;
+            fromDateNameLabel.textContent=language.bg.dateFromLabel;
+            toDateNameLabel.textContent=language.bg.DateToLabel;
+            Type.textContent=language.bg.serviceTypeLabel;
+            messageLabel.textContent=language.bg.noticeLabel;
+            checkLabel1.textContent=language.bg.agreeWith;
+            checkLabel2.textContent=language.bg.agreeWith;
+            href1.href = language.bg.href1;
+            href2.href = language.bg.href2;
+            href1.textContent = language.bg.AccommodationConditions;
+            href2.textContent = language.bg.PrivacyPolicy;
+            opt1.textContent = language.bg.opt1;
+            opt2.textContent = language.bg.opt2;
+            opt3.textContent = language.bg.opt3;
+            opt4.textContent = language.bg.opt4;
+        }else {
+            Title.textContent = language.en.title;
+            aboutUsNav.textContent=language.en.aboutUsNav;
+            cooperativeNav.textContent=language.en.cooperativeNav;
+            serviceNav.textContent=language.en.serviceNav;
+            contactNav.textContent=language.en.contactUs;
+            middleNameLabel.textContent=language.en.middleNameLabel;
+            nameLabel.textContent=language.en.nameLabel;
+            familyNameLabel.textContent=language.en.familyNameLabel;
+            kidsLabel.textContent=language.en.kidsLabel;
+            adultsLabel.textContent=language.en.adultsLabel;
+            singleRoomsNameLabel.textContent=language.en.singleRoomLabel;
+            doubleRoomsNameLabel.textContent=language.en.doubleRoomLabel;
+            tripleRoomsNameLabel.textContent=language.en.tripleRoomLabel;
+            apartmentsNameLabel.textContent=language.en.apartmentLabel;
+            bonusBedsNameLabel.textContent=language.en.bedsLabel;
+            fromDateNameLabel.textContent=language.en.dateFromLabel;
+            toDateNameLabel.textContent=language.en.DateToLabel;
+            Type.textContent=language.en.serviceTypeLabel;
+            messageLabel.textContent=language.en.noticeLabel;
+            checkLabel1.textContent=language.en.agreeWith;
+            checkLabel2.textContent=language.en.agreeWith;
+            href1.href = language.en.href1;
+            href2.href = language.en.href2;
+            href1.textContent = language.en.AccommodationConditions;
+            href2.textContent = language.en.PrivacyPolicy;
+            opt1.textContent = language.en.opt1;
+            opt2.textContent = language.en.opt2;
+            opt3.textContent = language.en.opt3;
+            opt4.textContent = language.en.opt4;
+        }
+    }
+    changeLanguage(false);
+
+</script>
 <style>
-  .wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-  }
+    .wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .floater {
+        display: flex;
+        flex-direction: column;
+        float: left;
+        text-align: left;
+    }
+    .logo {
+        margin-top: -15px !important;
+    }
+
+    #languageButtonChange {
+        margin-top: -6px !important;
+    }
+
+    .form-group {
+        color: #fff !important;
+        font-weight: 700;
+    }
+#Title {
+    color: #fff;
+}
+    #robot-message {
+        color: red;
+    }
 </style>

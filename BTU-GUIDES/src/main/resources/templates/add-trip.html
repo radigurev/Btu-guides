@@ -12,9 +12,12 @@
     <a href="/admin/edit/site/97979f2c-aa80-11ec-b909-0242ac120002">Връщане</a>
     <div>
         <input th:field="*{title}" type="text" placeholder="Заглавие">
+        <input th:field="*{titleEn}" type="text" placeholder="Заглавие (Английски)">
         <input th:field="*{imageUrl}" type="text" placeholder="линк за снимка на картата">
         <input th:field="*{description}" type="text" placeholder="кратко пояснение">
+        <input th:field="*{descriptionEn}" type="text" placeholder="кратко пояснение (Ангийски)">
         <input th:field="*{pdfUrl}" type="text" placeholder="Линк за pdf">
+        <input th:field="*{pdfUrlEn}" type="text" placeholder="Линк за pdf (Английски)">
         <select th:field="*{type}" name="" id="a">
             <option value="Bulgaria">България</option>
             <option value="Intr">Чужбина</option>

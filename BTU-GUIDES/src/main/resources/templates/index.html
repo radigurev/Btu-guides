@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="/css/index-style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <link rel="stylesheet" href="/css/nav3.css">
-        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+<!--        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>-->
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <script src="/js/recaptcha.js"></script>
         <script src="/js/translate.js"></script>
@@ -110,6 +110,8 @@
     </body>
 
     <script>
+        let navButtons = [...document.getElementsByClassName('nav-btn')];
+        let check = document.getElementById('check');
         var language = {
             en: {
                 comName:'COOPERATION "BTU-TOUR GUIDES"',
@@ -220,5 +222,12 @@
                     }
         }
         changeLanguage(false);
+
+        navButtons.forEach(btn => {
+            btn.addEventListener('click',function () {
+                    check.checked = false;
+            });
+        });
     </script>
 </html>
+

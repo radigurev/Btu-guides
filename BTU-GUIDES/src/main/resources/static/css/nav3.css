@@ -15,6 +15,10 @@
     color: #131644;
     font-weight: 700;
 }
+#languageButtonChange {
+    margin-top: 24px!important;
+}
+
 nav{
     background: #84e1f3;
     height: 80px;
@@ -123,7 +127,7 @@ label.logo img {
       #languageButtonChange {
           position: relative;
           top: 50%;
-          left: -22%;
+          left: -2%;
           margin-right: 0!important;
           margin-top: 0!important;
           transform: translate(-50%,-50%);

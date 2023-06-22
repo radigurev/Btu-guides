@@ -15,28 +15,78 @@
         <header th:style="|background: url(${cover})no-repeat center center fixed;|">
             <h1 th:text="${title}">Курсове и обучения</h1>
         </header>
-            <div class="container">
-                      <div id="container">
-                          <div id="slider-container">
-                            <span onclick="slideRight()" class="btn"></span>
-                              <div id="slider">
-                                  <div class="slide" th:each="c : ${courses}"><div class="card">
-                                      <figure >
-                                          <img th:src="${c.url}" alt="Hotel" >
-                                      </figure>
-
-                                      <div class="card-body">
-                                          <h5 class="card-title" th:text="${c.name}">title</h5>
-                                          <p class="card-text" th:text="${c.description}"> simply dummy text  </p>
-                                          <a th:href="@{${c.workerUrl}}" th:text="${c.worker}">Имe фамилия</a>
-                                      </div>
-                                  </div></div>
-                            </div>
-                            <span onclick="slideLeft()" class="btn"></span>
-                          </div>
-                        </div>
-
-                        <script src="/js/courses-slider.js"></script>
+        <div id="container" class="cards">
+            <div class="card" th:each="c : ${courses}">
+                <div class="card-img">
+                    <img class="animatedImg" th:src="${c.url}" alt="Hotel"/>
+                </div>
+                <br>
+                <br>
+                <div class="card-info">
+                    <p class="text-title card-title text-bg" th:text="${c.name}">Product title </p>
+<!--                    <p class="text-title card-title text-en" th:text="${t.titleEn}">Product title </p>-->
+                    <p class="text-body text-bg" th:text="${c.description}">Product description and details</p>
+<!--                    <p class="text-body text-en" th:text="|${t.descriptionEn}|">Product description and details</p>-->
+                    <a th:href="@{/translators}" class="text-bg" th:text="${c.worker}">Има-->
+                        фамилия</a>
+<!--                    <a th:href="@{/translators}" class="text-en" th:text="|${t.worker.firstNameEN} ${t.worker.lastNameEN}|">Има-->
+<!--                        фамилия</a>-->
+                </div>
+            </div>
         </div>
+<!--            <div class="container">-->
+<!--                      <div id="container">-->
+<!--                          <div id="slider-container">-->
+<!--                            <span onclick="slideRight()" class="btn"></span>-->
+<!--                              <div id="slider">-->
+<!--                                  <div class="slide" th:each="c : ${courses}"><div class="card">-->
+<!--                                      <figure >-->
+<!--                                          <img th:src="${c.url}" alt="Hotel" >-->
+<!--                                      </figure>-->
+
+<!--                                      <div class="card-body">-->
+<!--                                          <h5 class="card-title" th:text="${c.name}">title</h5>-->
+<!--                                          <p class="card-text" th:text="${c.description}"> simply dummy text  </p>-->
+<!--                                          <a th:href="@{${c.workerUrl}}" th:text="${c.worker}">Имe фамилия</a>-->
+<!--                                      </div>-->
+<!--                                  </div></div>-->
+<!--                            </div>-->
+<!--                            <span onclick="slideLeft()" class="btn"></span>-->
+<!--                          </div>-->
+<!--                        </div>-->
+
+<!--                        <script src="/js/courses-slider.js"></script>-->
+<!--        </div>-->
     </body>
 </html>
+<style>
+    @media (min-width: 858px) {
+        ul {
+            top: 50% !important;
+        }
+    }
+
+    #languageButtonChange {
+        margin-top: 25px !important;
+    }
+
+    @media (max-width: 858px) {
+        ul {
+            top: 64px!important;
+            left: -109% !important;
+        }
+        #check:checked ~ ul{
+            left: -8% !important;
+        }
+
+        #languageButtonChange {
+            margin-top: -77px !important;
+        }
+    }
+    label.logo img {
+        transform: scale(1) !important;
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+        transition: none !important;
+    }
+</style>

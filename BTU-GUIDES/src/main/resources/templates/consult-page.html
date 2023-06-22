@@ -54,7 +54,7 @@
                 "national level by tourist information centers (TICs).",
             aboutUsNav: "about us",
             cooperativeNav: "cooperative",
-            serviceNav: "service",
+            serviceNav: "services",
             contactUs: "Contact us"
         },
         bg: {
@@ -104,3 +104,34 @@
     changeLanguage(false);
 
 </script>
+<style>
+    @media (min-width: 858px) {
+        ul {
+            top: 50% !important;
+        }
+    }
+
+    #languageButtonChange {
+        margin-top: 25px !important;
+    }
+
+    @media (max-width: 858px) {
+        ul {
+            top: 64px!important;
+            left: -109% !important;
+        }
+        #check:checked ~ ul{
+            left: -8% !important;
+        }
+
+        #languageButtonChange {
+            margin-top: -77px !important;
+        }
+    }
+    label.logo img {
+        transform: scale(1) !important;
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+        transition: none !important;
+    }
+</style>

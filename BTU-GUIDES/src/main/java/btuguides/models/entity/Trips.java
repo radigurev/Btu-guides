@@ -13,7 +13,12 @@ public class Trips extends BaseEntity {
     private String imageUrl;
     private String type;
     private String pdfUrl;
+    private String pdfUrlEn;
     private Workers worker;
+
+    private String titleEn;
+
+    private String descriptionEn;
 
     public String getTitle() {
         return title;
@@ -54,6 +59,30 @@ public class Trips extends BaseEntity {
 
     public void setPdfUrl(String pdfUrl) {
         this.pdfUrl = pdfUrl;
+    }
+
+    public String getTitleEn() {
+        return titleEn;
+    }
+
+    public void setTitleEn(String titleEn) {
+        this.titleEn = titleEn;
+    }
+
+    public String getDescriptionEn() {
+        return descriptionEn;
+    }
+
+    public void setDescriptionEn(String descriptionEn) {
+        this.descriptionEn = descriptionEn;
+    }
+
+    public String getPdfUrlEn() {
+        return pdfUrlEn;
+    }
+
+    public void setPdfUrlEn(String pdfUrlEn) {
+        this.pdfUrlEn = pdfUrlEn;
     }
 
     @ManyToOne

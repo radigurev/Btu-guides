@@ -1,7 +1,6 @@
 /* Slider */
 
 .slider-container {
-    margin-top: 2025px;
     height: 40%;
 }
 .slick-slide {
@@ -119,10 +118,4 @@
 }
 .slick-arrow.slick-hidden {
     display: none;
-}
-
-@media (max-width: 800px) {
-    .slider-container {
-        margin-top: 2880px;
-    }
 }

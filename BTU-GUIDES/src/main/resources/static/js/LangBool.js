@@ -35,7 +35,7 @@ function getCookie(name) {
 
 function setCookie() {
     var btn = document.getElementById('languageButtonChange');
-    if(getCookie('language') === 'true') {
+    if(getCookie('language') == 'true') {
         document.cookie = "language = false";
         btn.src = 'https://res.cloudinary.com/dzqj0bike/image/upload/v1682530476/btu-guides/Flag_of_the_United_Kingdom__1-2_.svg_ayadam.webp';
     }

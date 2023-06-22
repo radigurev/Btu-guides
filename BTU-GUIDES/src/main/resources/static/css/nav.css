@@ -20,7 +20,7 @@ nav{
 label.logo img {
   width: 90px;
   height: 90%;
-  margin: 5px;
+  margin-top: -28px;
 }
 nav ul li {
    display:inline-block;
@@ -29,7 +29,7 @@ nav ul li {
     text-align: center;
     float: none;
     position: absolute;
-    top: 50%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -107,6 +107,7 @@ nav ul li a.active,nav ul li a:hover{
 
     #languageButtonChange {
       margin-left: 50%;
+      margin-top: -90px!important;
       transform: translateX(-50%);
     }
   }

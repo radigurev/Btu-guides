@@ -101,7 +101,7 @@ header::before {
     left: 50%;
     transform: translate(-50%,-50%);
     transition: all 0.5s ease;
-    text-align: justify;
+    /*text-align: justify;*/
 }
 .fa-check {
     color: #035403;
@@ -147,8 +147,4 @@ header::before {
     .cards {
         top: 2050px;
     }
-    .grid {
-        width: 70%;
-    }
-
 }

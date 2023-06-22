@@ -47,7 +47,7 @@ function setParams(w) {
         currentPosition -= slidesPerPage;
     };
     currentMargin = - currentPosition * (100 / slidesPerPage);
-    slider.style.marginLeft = currentMargin + '%';
+    // slider.style.marginLeft = currentMargin + '%';
     if (currentPosition > 0) {
         buttons[0].classList.remove('inactive');
     }

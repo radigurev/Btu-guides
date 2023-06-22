@@ -7,95 +7,265 @@
     <link rel="stylesheet" href="/css/translate-offers-style.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="/css/nav.css">
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
     <script src="/js/LangBool.js"></script>
 </head>
+
 <body>
 <nav th:replace="fragments/nav::nav">
 
 </nav>
 <header th:style="|background: url(${background}) no-repeat center center fixed;|">
-    <h1 id="header" th:text="|Туристически услуги в ${title}|">Туристически услуги</h1>
+    <th:block th:if="${titleEn.equals('Bulgaria') || titleEn.equals('Abroad')}">
+        <h1 id="header" th:text="|Туристически услуги в ${title}|">Туристически услуги</h1>
+        <h1 id="header1" th:text="|Tourist services in ${titleEn}|">Туристически услуги</h1>
+    </th:block>
+    <th:block th:if="${titleEn.equals('Tour guides')}">
+        <h1 id="header" th:text="|Екскурзоводски услуги|">Туристически услуги</h1>
+        <h1 id="header1" th:text="|Tour guide services|">Туристически услуги</h1>
+    </th:block>
 </header>
-<div class="container">
-    <button type="button" class="change-button" id="changebutton" onclick="changeSlider()">Туристически услуги</button>
-    <div id="container">
-        <div class="slider-container">
-            <span onclick="slideRight()" class="btn"></span>
-            <div id="slider">
 
-                <div class="slide" th:each="t : ${trips}">
-                    <div class="card">
-                        <figure>
-                            <img th:src="${t.imageUrl}" alt="Hotel">
-                        </figure>
-                        <div class="card-body">
-                            <a class="card-title" th:href="${t.pdfUrl}" th:text="|${t.title}|">Hotel 1</a>
-                            <p class="card-text" th:text="|${t.description}|"></p>
-                            <a th:href="@{/translators}" th:text="|${t.worker.firstName} ${t.worker.lastName}|">Има
-                                фамилия</a>
-                        </div>
-                        <div>
-                            <a th:href="@{/mail/{id}(id=${t.id})}" class="contact-btn">Свържете се с нас</a>
-                        </div>
-                    </div>
-                </div>
+<!--<div class="container">-->
+    <button type="button" onclick="ChangeCards()" class="change-button" id="changebutton">Туристически услуги</button>
+<!--    <div id="container">-->
+<!--        <div class="slider-container">-->
+<!--            <span onclick="slideRight()" class="btn"></span>-->
+<!--            <div id="slider">-->
 
-            </div>
-            <span onclick="slideLeft()" class="btn"></span>
+<!--                <div class="slide" th:each="t : ${trips}">-->
+<!--                    <div class="card">-->
+<!--                        <figure>-->
+<!--                            <img th:src="${t.imageUrl}" alt="Hotel">-->
+<!--                        </figure>-->
+<!--                        <div class="card-body">-->
+<!--                            <a class="card-title text-bg" th:href="${t.pdfUrl}" th:text="|${t.title}|">Hotel 1</a>-->
+<!--                            <a class="card-title text-en" th:href="${t.pdfUrlEn}" th:text="|${t.titleEn}|">Hotel 1</a>-->
+<!--                            <p class="card-text text-bg" th:text="|${t.description}|"></p>-->
+<!--                            <p class="card-text text-en" th:text="|${t.descriptionEn}|"></p>-->
+<!--                            <a th:href="@{/translators}" class="text-bg" th:text="|${t.worker.firstName} ${t.worker.lastName}|">Има-->
+<!--                                фамилия</a>-->
+<!--                            <a th:href="@{/translators}" class="text-en" th:text="|${t.worker.firstNameEN} ${t.worker.lastNameEN}|">Има-->
+<!--                                фамилия</a>-->
+<!--                        </div>-->
+<!--                        <div>-->
+<!--                            <a th:href="@{/mail/{id}(id=${t.id})}" class="contact-btn links-reservation">Заявка за резервация</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--            <span onclick="slideLeft()" class="btn"></span>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash; Second Slider &ndash;&gt;-->
+<!--    <div class="hidden" id="container2">-->
+<!--        <div class="slider-container">-->
+<!--            <span onclick="slideRight()" class="btn"></span>-->
+<!--            <br>-->
+<!--            <div id="slider2">-->
+
+<!--                <div class="slide2" th:each="t : ${translate}">-->
+<!--                    <div class="card2">-->
+<!--                        <figure>-->
+<!--                            <img class="animatedImg" th:src="${t.url}" alt="Hotel">-->
+<!--                        </figure>-->
+
+<!--                        <div class="card-body hidden">-->
+<!--                            <h5 class="card-title text-bg" th:text="${t.title}">Title</h5>-->
+<!--                            <h5 class="card-title text-en" th:text="${t.titleEn}">Title</h5>-->
+<!--                            <p class="card-text text-bg" th:text="${t.description}">simply dummy text</p>-->
+<!--                            <p class="card-text text-en" th:text="${t.descriptionEn}">simply dummy text</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--            <span onclick="slideLeft()" class="btn"></span>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+
+
+<!--<script src="/js/offers-page.js"></script>-->
+<div id="container" class="cards">
+    <div class="card trip" th:each="t : ${trips}">
+        <div class="card-img">
+            <img class="animatedImg" th:src="${t.imageUrl}" alt="Hotel"/>
+        </div>
+        <br>
+        <br>
+        <div class="card-info">
+            <a target="_blank" class="text-title card-title text-bg" th:href="${t.pdfUrl}" th:text="|${t.title}|">Hotel 1</a>
+            <a target="_blank" class="text-title card-title text-en" th:href="${t.pdfUrlEn}" th:text="|${t.titleEn}|">Hotel 1</a>
+            <p class="text-title card-title text-en" th:text="${t.titleEn}">Product title </p>
+            <p class="text-body text-bg" th:text="|${t.description}|">Product description and details</p>
+            <p class="text-body text-en" th:text="|${t.descriptionEn}|">Product description and details</p>
+            <a th:href="@{/translators}" class="text-bg" th:text="|${t.worker.firstName} ${t.worker.lastName}|">Има-->
+                фамилия</a>
+            <a th:href="@{/translators}" class="text-en" th:text="|${t.worker.firstNameEN} ${t.worker.lastNameEN}|">Има
+                фамилия</a>
+        </div>
+        <div class="card-footer">
+            <a th:href="@{/mail/{id}(id=${t.id})}" class="contact-btn links-reservation">Заявка за резервация</a>
         </div>
     </div>
-    <!-- Second Slider -->
-    <div class="hidden" id="container2">
-        <div class="slider-container">
-            <span onclick="slideRight()" class="btn"></span>
-            <br>
-            <div id="slider2">
 
-                <div class="slide2" th:each="t : ${translate}">
-                    <div class="card2">
-                        <figure>
-                            <img class="animatedImg" th:src="${t.url}" alt="Hotel">
-                        </figure>
-
-                        <div class="card-body hidden">
-                            <h5 class="card-title" th:text="${t.title}">Title</h5>
-                            <p class="card-text" th:text="${t.description}">simply dummy text</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <span onclick="slideLeft()" class="btn"></span>
+    <div class="card language hidden" th:each="t : ${translate}">
+        <div class="card-img">
+            <img class="animatedImg" th:src="${t.url}" alt="Hotel"/>
+        </div>
+        <br>
+        <br>
+        <div class="card-info">
+            <p class="text-title card-title text-bg" th:text="${t.title}">Product title </p>
+            <p class="text-title card-title text-en" th:text="${t.titleEn}">Product title </p>
+            <p class="text-body text-bg" th:text="|${t.description}|">Product description and details</p>
+            <p class="text-body text-en" th:text="|${t.descriptionEn}|">Product description and details</p>
         </div>
     </div>
-    <script src="/js/offers-page.js"></script>
-    <script>
-        var language = {
-            en: {
-            changeBtn: "Travel Services",
 
-            },
-            bg: {
-
-            }
-        }
-
-        function changeLanguage(change = true) {
-            if(change)
-                bgLanguage = !bgLanguage;
-
-            if(bgLanguage) {
-                aboutTitle.textContent = language.bg.title;
-
-            }else {
-                header.textContent = language.en.changeBtn;
-                changebutton.textContent = language.en.changeBtn;
-            }
-        }
-        changeLanguage(false);
-
-    </script>
 </div>
-
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+<script>
+    let offers = true;
+    var language = {
+        en: {
+            changeBtn: "Travel Services",
+            reservation: "Booking request",
+            aboutUsNav: "about us",
+            cooperativeNav: "cooperative",
+            serviceNav: "services",
+            contactUs: "Contact us"
+        },
+        bg: {
+            changeBtn: "Туристически услуги",
+            reservation: "Заявка за резервация",
+            aboutUsNav: "за нас",
+            cooperativeNav: "ЧЛЕНОВЕ",
+            serviceNav: "услуги",
+            contactUs: "контакти"
+        }
+    }
+
+    function changeLanguage(change = true) {
+        if (change)
+            bgLanguage = !bgLanguage;
+console.log("click")
+        if (bgLanguage) {
+            console.log('change to bg');
+            aboutUsNav.textContent = language.bg.aboutUsNav;
+            cooperativeNav.textContent = language.bg.cooperativeNav;
+            serviceNav.textContent = language.bg.serviceNav;
+            contactNav.textContent = language.bg.contactUs;
+
+            let bg = [...document.getElementsByClassName('text-bg')];
+            console.log('BG: '+bg);
+            let en = [...document.getElementsByClassName('text-en')];
+            console.log('EN: '+en);
+            let linksReservation = [...document.getElementsByClassName('links-reservation')];
+            console.log('Links: '+linksReservation);
+
+            header.classList.remove('hidden');
+            header1.classList.add('hidden');
+
+            bg.forEach(element => {
+                element.classList.remove('hidden');
+            });
+            en.forEach(element => {
+                element.classList.add('hidden');
+            });
+
+            linksReservation.forEach(element => {
+                element.innerText = language.bg.reservation;
+            });
+        } else {
+            console.log('change to en');
+            changebutton.textContent = language.en.changeBtn;
+            aboutUsNav.textContent = language.en.aboutUsNav;
+            cooperativeNav.textContent = language.en.cooperativeNav;
+            serviceNav.textContent = language.en.serviceNav;
+            contactNav.textContent = language.en.contactUs;
+
+            let bg = [...document.getElementsByClassName('text-bg')];
+            let en = [...document.getElementsByClassName('text-en')];
+            let linksReservation = [...document.getElementsByClassName('links-reservation')];
+
+            header1.classList.remove('hidden');
+            header.classList.add('hidden');
+
+            en.forEach(element => {
+                element.classList.remove('hidden');
+            });
+            bg.forEach(element => {
+                element.classList.add('hidden');
+            });
+
+            linksReservation.forEach(element => {
+                element.innerText = language.en.reservation;
+            });
+        }
+    }
+
+    changeLanguage(false);
+
+    function ChangeCards() {
+        let offers = [...document.getElementsByClassName('trip')];
+        let languages = [...document.getElementsByClassName('language')];
+        if(this.offers) {
+            offers.forEach(offer => {
+                offer.classList.remove('hidden');
+            });
+            languages.forEach(lang => {
+                lang.classList.add('hidden');
+            });
+            this.offers = false;
+        }else {
+            offers.forEach(offer => {
+                offer.classList.add('hidden');
+            });
+            languages.forEach(lang => {
+                lang.classList.remove('hidden');
+            });
+
+            this.offers = true;
+        }
+        console.log()
+    }
+</script>
+<style>
+   @media (min-width: 858px) {
+       ul {
+           top: 50% !important;
+       }
+   }
+
+   #languageButtonChange {
+       margin-top: 25px !important;
+   }
+
+   @media (max-width: 858px) {
+       ul {
+           top: 64px!important;
+           left: -109% !important;
+       }
+       #check:checked ~ ul{
+           left: -8% !important;
+       }
+
+       #languageButtonChange {
+           margin-top: -77px !important;
+       }
+   }
+    label.logo img {
+        transform: scale(1) !important;
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+        transition: none !important;
+    }
+</style>

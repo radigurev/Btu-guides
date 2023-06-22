@@ -6,11 +6,29 @@ import javax.persistence.*;
 @Table(name = "courses")
 public class Courses extends BaseEntity{
     private String name;
+    private String nameEn;
     private String description;
+    private String descriptionEn;
     private String url;
     private String worker;
     private String workerUrl;
     private String type;
+
+    public String getNameEn() {
+        return nameEn;
+    }
+
+    public void setNameEn(String nameEn) {
+        this.nameEn = nameEn;
+    }
+
+    public String getDescriptionEn() {
+        return descriptionEn;
+    }
+
+    public void setDescriptionEn(String descriptionEn) {
+        this.descriptionEn = descriptionEn;
+    }
 
     public String getName() {
         return name;

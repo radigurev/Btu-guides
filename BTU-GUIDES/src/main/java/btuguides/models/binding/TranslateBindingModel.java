@@ -3,7 +3,9 @@ package btuguides.models.binding;
 public class TranslateBindingModel {
     private String url;
     private String title;
+    private String titleEn;
     private String description;
+    private String descriptionEn;
 
     public String getUrl() {
         return url;
@@ -27,5 +29,21 @@ public class TranslateBindingModel {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getTitleEn() {
+        return titleEn;
+    }
+
+    public void setTitleEn(String titleEn) {
+        this.titleEn = titleEn;
+    }
+
+    public String getDescriptionEn() {
+        return descriptionEn;
+    }
+
+    public void setDescriptionEn(String descriptionEn) {
+        this.descriptionEn = descriptionEn;
     }
 }

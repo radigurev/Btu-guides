@@ -7,6 +7,10 @@ public class TripBindingModel {
     private String type;
     private String pdfUrl;
     private String worker;
+    private String titleEn;
+    private String descriptionEn;
+    private String pdfUrlEn;
+
 
     public String getTitle() {
         return title;
@@ -54,5 +58,29 @@ public class TripBindingModel {
 
     public void setWorker(String worker) {
         this.worker = worker;
+    }
+
+    public String getTitleEn() {
+        return titleEn;
+    }
+
+    public void setTitleEn(String titleEn) {
+        this.titleEn = titleEn;
+    }
+
+    public String getDescriptionEn() {
+        return descriptionEn;
+    }
+
+    public void setDescriptionEn(String descriptionEn) {
+        this.descriptionEn = descriptionEn;
+    }
+
+    public String getPdfUrlEn() {
+        return pdfUrlEn;
+    }
+
+    public void setPdfUrlEn(String pdfUrlEn) {
+        this.pdfUrlEn = pdfUrlEn;
     }
 }
